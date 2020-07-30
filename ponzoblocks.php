@@ -166,33 +166,28 @@ class PonzoBlocks
     public function init()
     {
         //gets all acf fields for the pb-gutenberg editor
-        if (ENV === 'production'):
+        //if (ENV === 'production'):
             // $this->requireFile($this->path . "/lib/pb-production-" . $this->fieldsversion . ".php");
-        endif;
+        //endif;
         //load pb-gutenberg assets if is admin
         if (is_admin()) {
             add_action('enqueue_block_assets', array($this, 'getAssets'));
             //resets gutenberg editor options
             $this->requireFile($this->path . "/lib/pb-gutenreset.php");
-            // loads the module themes for blocks into each design option
-            $this->requireFile($this->path . "lib/pb-modulethemes.php");
         }
         //allowed blocktypes
         add_filter('allowed_block_types', array($this, 'ponzoblocks'));
-        //
-        //register blocks-options
-        if (function_exists('acf_add_options_page')) {
-            acf_add_options_page(array(
-                'page_title' => 'Module themes',
-                'menu_title' => 'Module themes',
-                'menu_slug' => 'theme-blocks-settings',
-                'capability' => 'edit_posts',
-            ));
-        }
-        //helper for theme functions
-        $this->requireFile($this->path . "/lib/pb-themehelpers.php");
-        //now load the ponzoblocks gutenberg blocks
-        $this->requireFile($this->path . "/lib/pb-gutenberg.php");
+        
+        // add ponzoblocks setup to wp-admin
+        acf_add_options_page(array(
+            'page_title' => 'Ponzoblocks',
+            'menu_title' => 'Ponzoblocks',
+            'menu_slug' => 'theme-builder-settings',
+            'icon_url' => 'dashicons-editor-table',
+            'capability' => 'edit_posts',
+        ));
+            //now load the ponzoblocks gutenberg blocks
+        $this->requireFile($this->path . "/lib/pb-blocksetup.php");
     }
 }
 
