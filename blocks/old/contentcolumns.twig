@@ -1,0 +1,34 @@
+{# contentcolumns #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set columns = function('pb_countrows', fields.contentcolumns) %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+{# if layout is columns, put all columns on one row #}
+{% if fields.cpr %}
+{% set colclass = 12 / fields.cpr %}
+{% else %}
+{% set colclass = 12 %}
+{% endif %}
+
+{% set template = "contentcolumn" %}
+{# create list #}
+{# {% include 'ponzobuilder/contentcolumns-listnav.twig'  %} #}
+{# set columns default to 50% on tablet #}
+{% if fields.cpr == 3 %}
+{% set tabclass = 'tab-4' %}
+{% else %}
+{% set tabclass = 'tab-6' %}
+{% endif %}
+{% set index = 0 %}
+{# end wrap if slideshow #}
+{% for contentcolumn in fields.contentcolumns %}
+        {% set index = index + 1 %}
+        {% set activeclass = '' %}
+        {% set tabref = ref ~ '-' ~ index %}
+                {% if index == 1 %}
+                {% set activeclass = 'active' %}
+        {% endif %}
+        {% include 'ponzobuilder/' ~ template ~ '.twig'  %}
+{% endfor %}
+
+{% endblock %}

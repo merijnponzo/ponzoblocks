@@ -1,0 +1,19 @@
+{# testimonials #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set columns = function('pb_countrows', fields.testimonials) %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+{% set template = "testimonial" %}
+{# if layout is columns, put all columns on one row #}
+{% set colclass = 12 / fields.cpr %}
+{% set index = 0 %}
+{% for testimonial in fields.testimonials %}
+        {% set index = index + 1 %}
+        {% set activeclass = '' %}
+        {% set tabref = ref ~ '-' ~ index %}
+         {% if index == 1 %}
+                {% set activeclass = 'active' %}
+        {% endif %}
+        {% include 'ponzobuilder/' ~ template ~ '.twig'  %}
+{% endfor %}
+{% endblock %}

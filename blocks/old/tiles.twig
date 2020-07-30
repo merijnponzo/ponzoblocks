@@ -1,0 +1,8 @@
+{# tiles #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+{% for tile in fields.tiles %}
+        {% include 'ponzobuilder/tile.twig' %}
+{% endfor %}	
+{% endblock %}

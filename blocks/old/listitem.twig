@@ -1,0 +1,16 @@
+{# listitems single #}
+<div class="col ref-{{index}} col-{{colclass}} pb-listitem">
+    {% set visual = listitem.visual.visualsimpleclone %}
+  
+    <div class="pb-colhead">
+    {% if visual.image %}
+    {% include 'ponzobuilder/visualsimple.twig' %}
+    {% endif %}  
+    </div>
+    <h5 class="listitem-title">{{listitem.title}}</h5>
+    <span class="listitem-desc">{{listitem.subtitle}}</span>
+    <span class="listitem-text">{{listitem.text}}</span>
+    {% set link = listitem.link.linkclone %}
+    {% include 'ponzobuilder/linkbutton.twig' %}
+   
+</div>

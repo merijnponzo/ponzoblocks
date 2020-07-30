@@ -1,0 +1,26 @@
+{# priceblocks #}
+{% set rowclass = "" %}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+{% set colclass = 12 / fields.cpr %}
+
+{% for gallery in fields.gallery %}
+    <div class="col col-{{colclass}} pb-gallery-item" {{scrolleffect}}>
+        {% if gallery.embed %}
+                 <div class="video">
+                {{gallery.embed}}
+                </div>
+            {% else %}
+                {% set visual = function('pb_image_acf', gallery.visual.image) %}
+                {% if visual %}
+                {% if option.parallax %}
+                    {% set visualoptions = visualoptions|merge({'visualclass': 'rellax-wallpaper'}) %}
+                {% endif %}
+                {% include 'ponzobuilder/visual.twig' %}
+                {% endif %}
+            {% endif %}
+        <p class="pb-gallery-text">{{gallery.text}}</p>
+    </div>
+{% endfor %}
+{% endblock %}

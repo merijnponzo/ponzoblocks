@@ -1,0 +1,19 @@
+{# contentcolumn single #}
+<div id="{{tabref}}" class="col col-9 row tab-block {{activeclass}}">
+    <div class="col col-6">
+    {% set visual = contentcolumn.visual.visualsimpleclone %}
+    {% if visual.image %}
+        {% include 'ponzobuilder/visualsimple.twig' %}
+    {% endif %}
+    </div>
+    <div class="col ref-{{index}} col-6 pb-contentcolumn">
+        <div class="pb-wrap">
+        <div class="pb-colhead">  
+        <h4>{{contentcolumn.title}}</h4>
+        </div>
+        <span>{{contentcolumn.text}}</span>
+        {% set link = contentcolumn.link.linkclone %}
+        {% include 'ponzobuilder/linkbutton.twig' %}
+        </div>
+    </div>
+</div>

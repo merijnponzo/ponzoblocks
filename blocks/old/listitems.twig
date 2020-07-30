@@ -1,0 +1,11 @@
+{# listitems #}
+{% set rowclass = "" %}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set colclass = 12 / fields.cpr %}
+
+{% set visualoptions = fields.visual.visualoptionsclone %}
+{% for listitem in fields.listitems %}
+        {% include 'ponzobuilder/listitem.twig' %}
+{% endfor %}	
+{% endblock %}

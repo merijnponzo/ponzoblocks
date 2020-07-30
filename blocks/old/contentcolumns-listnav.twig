@@ -1,0 +1,12 @@
+<ul class="col col-3 tab-list">
+{% set index = 0 %}
+{% for columnlist in fields.contentcolumns %}
+        {% set index = index + 1 %}
+        {% set activeclass = '' %}
+        {% set tabref = ref ~ '-' ~ index %}
+        {% if index == 1 %}
+                {% set activeclass = 'active' %}
+        {% endif %}
+        <li class="{{activeclass}}" data-panelopen="{{tabref}}"><span class="cc-num">{{index}}</span></span><span>{{columnlist.navtitle}}</span></li>
+{% endfor %}
+</ul>

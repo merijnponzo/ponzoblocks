@@ -1,0 +1,39 @@
+{# textvisual #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set colclasses = function('pb_colclasses', option.textwidth) %}
+<div class="col {{colclasses.col2}} visual-col pb-features" {{scrolleffect}}>
+{% set visual = function('pb_image_acf', fields.visual.visualclone.image) %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+{% include 'ponzobuilder/visual.twig' %}
+    <div class="pb-features-wrap">
+        {% for row in fields.features %}
+        <div class="nest nest-6">
+            <p class="row-label">{{row.label}}</p>
+            <p class="row-value">{{row.value}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="col content text-col order-{{fields.textposition}} {{colclasses.col1}}" {{scrolleffect}}>
+    <h4 class="pb-title">{{fields.title}}</h4>
+    <div class="box pb-specials">
+    {% if fields.label %}
+    <h4 class="box-label">{{fields.label}}</h4>
+    {% endif %}
+   {% for key,row in fields.specials %}
+    {% if key == 0 %}
+        {% set active = 'active' %}
+    {% else %}
+        {% set active = '' %}
+    {% endif %}
+    <div id="row_{{key}}" class="accordeon {{active}}">
+        <p class="row-label nav-button" data-tabs="accordeon" data-target="row_{{key}}">{{row.label}}</p>
+        <p class="row-value">{{row.value}}</p>
+    </div>
+    {% endfor %}
+     {% set link = fields.link.linkclone %}
+    {% include 'ponzobuilder/linkbutton.twig' %}
+    </div>
+</div>
+{% endblock %}

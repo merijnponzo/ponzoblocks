@@ -1,0 +1,29 @@
+{# visualgallery #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set colclasses = function('pb_colclasses', option.textwidth) %}
+<div class="col mob-tab-12 {{colclasses.col2}} visual-col">
+<div class="pb-wrap">{{fields.text}}
+{% set link = fields.link.linkclone %}
+{% include 'ponzobuilder/linkbutton.twig' %}
+</div>
+{% set visual = fields.visual.visualclone %}
+{% if visual.image %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+{% include 'ponzobuilder/visual.twig' %}
+{% endif %}
+</div>
+deze?
+<div class="col pb-gallery mob-tab-12 text-col order-{{fields.galleryposition}} {{colclasses.col1}}">
+{% if fields.title %}
+<h4 class="chapter"><span class="chapter-small">{{fields.title}}</span></h4>
+{% endif %}
+{% set tiles = function('pb_galleryvisual', fields) %}
+{% set visualoptions = fields.visualoptions.visualoptionsclone %}
+<div class="row visual-gallery-tiles gutter-">
+   {% for tile in tiles %}
+         {% include 'ponzobuilder/visualgallery-tile.twig' %}
+   {% endfor %}	
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{# textvisual #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+<div class="col col-12">
+    {% if fields.type == 'embed' %}
+        {{fields.embed}}
+    {% else %}
+         {{ function('do_shortcode', fields.shortcode) }}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{# priceblock single #}
+<div class="row child">
+{% if priceblock.visual %}
+{% set visual = priceblock.visual.visualsimpleclone %}
+{% include 'ponzobuilder/visualsimple.twig' %}
+{% endif %}
+    <div class="pb-wrap">
+        <h4>{{priceblock.title}}</h4>
+        <p>{{priceblock.text}}</p>
+        <div class="pb-pricerows">
+        {% for pricerow in priceblock.pricerows %}
+            <div class="pb-pricerow">
+                <span class="pb-price">{{pricerow.volume}}</span>
+                <span class="pb-product">{{pricerow.description}}</span>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="two-cols space-small">
+            <p class="h4">{{priceblock.totalprice}}</p>
+            {% set link = priceblock.link.linkclone %}
+            {% include 'ponzobuilder/linkbutton.twig' %}
+        </div>
+    </div>
+</div>

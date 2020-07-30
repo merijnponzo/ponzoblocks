@@ -1,0 +1,37 @@
+
+{# check colclasses #}
+{% set colclasses = function('pb_colclasses', option.textwidth) %}
+{% set overlay = "" %}
+{# if one column set 100% class #}
+{% if fields.columns == 0 %}
+    {% set colclass = "col-12" %}
+{# get calculated class #}
+{% else %}
+    {% set colclass = colclasses.col2 %}
+{% endif %}
+<div class="row pb-bannerheight-{{fields.bannerheight}}">
+    <div class="col order-{{fields.textposition}} {{colclasses.col1}} col-a">
+        <div class="pb-box pb-slogan">{{fields.text}}
+         {% set link = fields.link.linkclone %}
+         {% include 'ponzobuilder/linkbutton.twig' %}
+         </div>
+    </div>
+    {# if two columns, show this column #}
+    {% if fields.columns == 2 %}
+    <div class="col {{colclass}} align-{{fields.textposition}} col-b">
+        <div class="pb-holder">
+            {# if if image and image isnt a background, place in column #}
+                <div class="{{overlay}} pb-box">
+                {{fields.secondtext}}
+                {% set link = fields.link.linkclone %}
+                </div>    
+            </div>
+        </div>
+    {% endif %}
+    
+     {% if fields.insideimage %}
+     <div class="pb-banner">  
+     {% include 'ponzobuilder/visuals.twig' %}
+    </div>
+    {% endif %}
+    </div>

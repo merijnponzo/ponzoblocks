@@ -1,0 +1,10 @@
+{# priceblocks #}
+{% set rowclass = "" %}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+{% set colclass = 12 / function('pb_countrows', fields.priceblocks) %}
+{% set visualoptions = fields.visualoptionsclone %}
+{% for priceblock in fields.priceblocks %}
+        {% include 'ponzobuilder/priceblock.twig' %}
+{% endfor %}	
+{% endblock %}

@@ -1,0 +1,16 @@
+{# quote #}
+ {% set visual = function('pb_image_acf', fields.visual.visualclone.image) %}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+    <div class="col col-12">
+    <div class="box">
+    {% if visual.sizes.thumbnail %}
+    <div class="col--visual bg" style="background-image: url('{{fields.visual.visualclone.image.sizes.large}}')"></div>
+    {% endif %}
+    <div class="quote--label">{{fields.label}}</div>
+    <div class="quote--title">{{fields.text}}</div>
+    {% set link = fields.link.linkclone %}
+    {% include 'ponzobuilder/linkbutton.twig' %}
+    </div>
+</div>
+{% endblock %}

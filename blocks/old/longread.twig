@@ -1,0 +1,10 @@
+{# longread #}
+{% extends "ponzobuilder/section.twig" %}
+{% block sectioncontent %}
+<div class="col col-12 pushed" {{scrolleffect}}>
+<div class="box">{{fields.longread}}
+{% set link = fields.link.linkclone %}
+{% include 'ponzobuilder/linkbutton.twig' %}
+</div>
+</div>
+{% endblock %}

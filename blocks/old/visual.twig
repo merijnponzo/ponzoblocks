@@ -1,0 +1,63 @@
+{# visuals #}
+{% set orientation = 'landscape' %}
+{% set fit = 'cover' %}
+{% if visual.meta.width <= visual.meta.height %}
+{% set orientation = 'portrait' %}
+{% set fit = 'contain' %}
+{% endif %}
+{% if visualoptions.fit %}
+    {% set fit = visualoptions.fit %}
+{% endif %}
+<div id="{{visualoptions.visualid}}" class="visual {{visualoptions.visualclass}} size-{{visualoptions.size}}" data-scroll>    
+    <div class="img-wrap ratio-{{visualoptions.ratio}} fit-{{fit}} orientation-{{orientation}}">
+    {% if visual.sizes.thumbnail == null %}
+          {% include 'ponzobuilder/placeholder.twig' %}
+    {% else %}
+        <picture class="picture"  >
+        {# if different visual is selected for mobile #}
+        {% if visual.imagemobile %}
+            <source
+            class="img"
+            data-srcset="{{visual.imagemobile.sizes.medium}}"
+            media="(max-width: 999px)" />
+        {% elseif visual.sizes.thumbnail %}
+            <source
+            class="img"
+            data-srcset="{{visual.sizes.thumbnail}}"
+            media="(max-width: 500px)" />
+        {% endif %}
+        {# medium #}
+        {% if visual.image.sizes.medium %}
+            <source
+            class="img"
+            data-srcset="{{visual.sizes.medium}}"
+            media="(max-width: 1000px)" />
+        {% endif %}
+        {# if large is available and picture is not a background #}
+        {% if visual.sizes.large and fields.background == 0 %}
+            <img
+            data-src="{{visual.sizes.large}}"
+            class="img lazy lazyload"
+            data-sizes="auto"/>
+        {# if large is available and picture is background #}
+        {% elseif visual.sizes.large and fields.background %}
+        {% set background = function('pb_imagefull', visual.ID) %}
+            <source
+            class="img"
+            data-srcset="{{background}}"
+            media="--full" />
+            <img
+            data-src="{{background}}"
+            class="img lazy lazyload"
+            data-sizes="auto"/>
+        {# if large is not available#}
+        {% else %}
+            <img
+            data-src="{{visual.sizes.full}}"
+            class="img lazy lazyload"
+            data-sizes="auto"/>
+        {% endif %}
+        </picture>
+      {% endif %}
+    </div>
+</div>

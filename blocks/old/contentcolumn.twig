@@ -1,0 +1,17 @@
+{# contentcolumn single #}
+ {% set visual = function('pb_image_acf', contentcolumn.visual.visualsimpleclone.image) %}
+ <div class="col ref-{{index}} col-{{colclass}} pb-contentcolumn {{tabclass}}">
+    <div class="box">
+        {% if visual.sizes.thumbnail %}
+        <div class="col--head">
+             {% include 'ponzobuilder/visual.twig' %}
+         </div>
+         {% endif %}
+        <div class="col--content">
+            <h5 class="col--title">{{contentcolumn.title}}</h5>
+            <div class="col--text">{{contentcolumn.text}}</div>
+        </div>
+        {% set link = contentcolumn.link.linkclone %}
+        {% include 'ponzobuilder/linkbutton.twig' %}
+    </div>
+</div>

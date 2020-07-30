@@ -1,0 +1,17 @@
+{# visualsimple #}
+<div id="{{visualoptions.visualid}}" class="visual size-{{visualoptions.size}} {{visualoptions.visualclass}}">
+    <div class="img-wrap ratio-{{visualoptions.ratio}} fit-{{visualoptions.fit}}">
+      {% if visual.sizes.thumbnail == null %}
+            {% include 'ponzobuilder/placeholder.twig' %}
+            {% else %}
+            {% if visual.sizes.thumbnail != null %}
+            <img
+            data-src="{{visual.sizes.large}}"
+            class="img lazyload"
+            data-sizes="auto"/>
+            {% else %}
+            <div class="img lazyloadplaceholder"></div>
+            {% endif %}
+      {% endif %}
+      </div>
+</div>

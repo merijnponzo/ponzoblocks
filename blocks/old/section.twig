@@ -1,0 +1,58 @@
+{% set design = fields.design.designclone %}
+{% set heading = fields.heading.headingclone %}
+{% set wrapclass = '' %}
+{% set tightclass = '' %}
+{% set slideshow = '' %}
+{% set mobileonly = '' %}
+{% set marginclass = 'gap'%}
+{% set darkmodeclass = ''%}
+{% set scrolleffect = 'data-scroll' %}
+{% if option.wrap %}
+    {% set wrapclass = 'wrap' %}
+{% else %}
+    {% set wrapclass = 'wrap full' %}
+{% endif %}
+
+{% if option.tight %}
+    {% set tightclass = 'tight' %}
+{% endif %}
+
+{% if design.darkmode %}
+    {% set darkmodeclass = 'darkmode' %}
+{% endif %}
+{% if fields.slideshow == 'on' or  fields.slideshow == 'mobile' %}
+    {% set slideshow = 'pb-slider' %}
+    {% if fields.slideshow == 'mobile' %}
+         {% set mobileonly = 'mobileonly' %}
+    {% endif %}
+{% endif %}
+{# set wrap to pushed #}
+{% if option.pushed  %}
+     {% set wrapclass = 'wrap--pushed' %}
+{% endif %}
+{# no srolleffect if parallax #}
+{% if design.parallaxoff == 1 %}
+    {% set scrolleffect = '' %}
+{% endif %}
+
+<section class="pb-section ref-{{design.ref}} pb-{{module}} theme-{{option.name}} {{darkmodeclass}}">
+    <div class="{{wrapclass}} {{marginclass}}">
+        {% if not heading.insideblocks %}
+            {% include 'ponzobuilder/headingtitle.twig' %}
+        {% endif %}
+        <div class="row parent {{rowclass}} {{tightclass}} {{slideshow}} {{mobileonly}}">
+        {% if heading.insideblocks %}
+            {% include 'ponzobuilder/headingtitle.twig' %}
+        {% endif %}
+        {% block sectioncontent %}
+            content
+        {% endblock %}
+        </div>
+    </div>
+    {% set visual = fields.background_image %}
+    {% if visual %}
+    <div class="visual-background">
+        {% include 'ponzobuilder/visualbackground.twig'  %}
+    </div>
+    {% endif %}
+</section>

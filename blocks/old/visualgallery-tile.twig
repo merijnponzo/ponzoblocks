@@ -1,0 +1,10 @@
+{# tile single #}
+<div class="col col-6 mob-tab-12 tile">
+    <div class="pb-visual-bg" style="background-image:url({{tile.visual.sizes.medium}})">
+    </div>
+    <h5>{{tile.title}}</h5>
+    {% if title.excerpt %}
+    <p class="font-small">{{tile.excerpt}}</p>
+    {% endif %}
+    <a class="pb-link area" data-routelink="{{tile.permalink}}" href="{{tile.permalink}}"></a>
+</div>

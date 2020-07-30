@@ -1,0 +1,14 @@
+{# tile single #}
+{% set colclass = 12 / option.columns %}
+<div class="col col-{{colclass}} tab-4 mob-6 pb-tile">
+    {% set visual = function('pb_image', tile.ID, true,'square') %}
+    {% if visual.image %}
+    {% include 'ponzobuilder/visualsimple.twig' %}
+    {% endif %}
+    <div class="pb-wrap">
+    <h5>{{tile.post_title}}</h5>
+    <p class="font-small">{{tile.post_excerpt}}</p>
+    </div>
+    {% set link = function('pb_link', tile.ID) %}
+    <a class="pb-link area" data-routelink="{{link}}" href="{{link}}"></a>
+</div>
