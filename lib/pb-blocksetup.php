@@ -110,8 +110,8 @@ function pb_register_acf_gutenberg_blocks()
     
     $blocks = get_pb_blocks();
     $dir = get_template_directory();
-
     if (function_exists('acf_register_block')) {
+ 
         // Register the hero block.
         foreach ($blocks as $block) {
             $blockname = $block['name'];
@@ -120,7 +120,7 @@ function pb_register_acf_gutenberg_blocks()
                 'block' => $blockname,
                 'title' => __($block['title'], 'pb'),
                 'description' => __($block['description'], 'pb'),
-                'render_template' => plugin_dir_path(__FILE__) . 'blocks/blockwrap.php',
+                'render_callback' => 'pb_render_block',
                 'category' => 'ponzobuilder',
                 'icon' => $block['icon'],
                 'supports' => array('align' => false),
@@ -170,3 +170,18 @@ function setBlockThemes()
     }
 }
 add_action('acf/init', 'setblockThemes');
+
+
+function pb_render_block( $block, $content = '', $is_preview = false ) {
+    $context = Timber::context();
+    // Acf fields
+    $context['block'] = get_fields();
+    $context['content'] = $content;
+    // Blockmeta
+    $context['blockmeta'] = $block;
+   // $is_preview
+    $context['is_preview'] = $is_preview;
+    // Render the block.
+    Timber::render( 'textvisual.twig', $context );
+}
+

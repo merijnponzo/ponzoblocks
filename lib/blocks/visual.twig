@@ -1,0 +1,29 @@
+{# visual #}
+{% set visual = block.visual.visual %}
+{% set options = block.visualoptions.visualoptions %}
+
+<div class="visual">
+    <div class="wrap ratio--{{options.ratio}} mwid--{{options.size}}">
+        <picture class="picture">
+            {% if visual.imagemobile %}
+            <source
+            class="img"
+            data-srcset="{{visual.imagemobile.sizes.medium}}"
+            media="(max-width: 999px)" />
+            {% else %}
+            <source
+            class="img lazyload {{options.fit}}"
+            data-srcset="{{visual.image.sizes.small}}"
+            media="(max-width: 599px)" />
+            {% endif %}
+            <source
+            class="img lazyload {{options.fit}}"
+            data-srcset="{{visual.image.sizes.medium}}"
+            media="(max-width: 1199px)" />
+            <img
+            data-src="{{visual.image.sizes.large}}"
+            class="img lazyload {{options.fit}}"
+            data-sizes="auto"/>
+        </picture>
+    </div>
+ </div>

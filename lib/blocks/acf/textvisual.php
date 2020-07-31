@@ -1,9 +1,8 @@
 <?php
 ?>
 <div class="col col-6">
-   hello         yes!! <?php var_dump($block); ?>
-
+  <?= $block['data']['text']; ?>
 </div>
-</div>
-   
+</div class="col col-6">
+   <?php require_once('visual.php');?>
 </div>
