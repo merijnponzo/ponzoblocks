@@ -5,11 +5,11 @@
     if (document.getElementById('wpwrap')) {
       //when preview is clicked in block
       $(document).on('click', "[aria-label='Switch to Preview']", function(e) {
-        pbTriggerMode(e, 'Preview')
+        pbInitMode('Preview')
       })
       //when edit is clicked in block
       $(document).on('click', "[aria-label='Switch to Edit']", function(e) {
-        pbTriggerMode(e, 'Edit')
+        pbInitMode('Edit')
       })
 
     }
@@ -59,9 +59,16 @@
         pbBlock = $(e)
       }
     }
-    if (pbBlock) {
+    
+    if (pbBlock.length) {
       type = pbBlock.attr('data-type')
+      if(mode == 'Preview'){
+        pbBlock.addClass('pb')
+      }else{
+        pbBlock.removeClass('pb')
+      }
     }
+   
     //create promise to interval
     var promise = new Promise(function(resolve, reject) {
       var checker = setInterval(function() {

@@ -305,18 +305,3 @@ function pb_galleryvisual($fields)
 
     return $posts;
 }
-
-//adds breadcrumbs
-/*
-function pb_breadcrumbs(){
-if(function_exists("seopress_display_breadcrumbs")) { seopress_display_breadcrumbs(); }
-}
- */
-
-//ads a language switcher
-function pb_languages()
-{
-    if (class_exists('Polylang')) {
-        return pll_the_languages(array("display_names_as" => "slug"));
-    }
-}

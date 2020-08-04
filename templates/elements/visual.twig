@@ -1,9 +1,8 @@
 {# visual #}
-{% set visual = block.visual.visual %}
-{% set options = block.visualoptions.visualoptions %}
-
+{% macro image(visual, options) %}
+{# acf cloned element #}
 <div class="visual">
-    <div class="wrap ratio--{{options.ratio}} mwid--{{options.size}}">
+    <div class="img--wrap ratio--{{options.ratio}} mwid--{{options.size}}">
         <picture class="picture">
             {% if visual.imagemobile %}
             <source
@@ -27,3 +26,4 @@
         </picture>
     </div>
  </div>
+ {% endmacro %}

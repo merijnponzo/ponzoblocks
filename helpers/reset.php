@@ -1,6 +1,10 @@
-<?php
-//https://joseph-dickson.com/removing-specific-gutenberg-core-blocks-and-options/
-//add_theme_support( 'align-wide' );
+<?php  
+/*
+*
+*  Reset Gutenberg options
+*  https://joseph-dickson.com/removing-specific-gutenberg-core-blocks-and-options/
+*/
+add_theme_support( 'align-wide' );
 //disable custom font-sizes
 add_theme_support( 'disable-custom-font-sizes' );
 // disable manual font size slider and input box
@@ -15,19 +19,20 @@ function remove_title_tag() {
 }
 // disable gutenberg style in frront
 function wps_deregister_styles() {
-    wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library' );
 }
 add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+
 // adds a category for the acf modules
-function pb_category_ponzobuilder( $categories, $post ) {
+function PonzoblocksCategory( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug' => 'ponzobuilder',
-				'title' => __( 'Ponzobuilder', 'ponzobuilder' ),
+				'slug' => 'ponzoblocks',
+				'title' => __( 'Ponzoblocks', 'ponzoblocks' ),
 			),
 		)
 	);
 }
-add_filter( 'block_categories', 'pb_category_ponzobuilder', 10, 2);
+add_filter( 'block_categories', 'PonzoblocksCategory', 10, 2);

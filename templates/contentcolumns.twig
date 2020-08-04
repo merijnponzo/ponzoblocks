@@ -1,0 +1,7 @@
+{# contentcolumns #}
+{% extends "blockwrap.twig" %}
+{% block blockcontent %}
+        {% for column in block.contentcolumns %}
+                {% include 'contentcolumn.twig'  %}
+        {% endfor %}
+{% endblock %}

@@ -1,5 +1,5 @@
+/* deprecated 
 window.onload = function() {
-
   
         var blocks = [
             'core/paragraph',
@@ -47,3 +47,4 @@ window.onload = function() {
             },1000); 
         }
     }
+*/

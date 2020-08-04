@@ -1,0 +1,12 @@
+{% import "macros/chapter.twig" as chapter %}
+
+<section class="pb__{{name}}">
+    <div class="wrap gut--{{options.gutter}} {{options.wrap ?: 'wid--fl'}}">
+        {{chapter.heading(block.heading.heading)}}
+        <div class="row">
+           {% block blockcontent %}
+                content
+            {% endblock %}
+        </div>
+    </div>
+</section>

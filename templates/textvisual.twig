@@ -1,0 +1,20 @@
+{# textvisual #}
+{% set colclasses = function('pb_colclasses', options.textwidth)  %}
+{% import 'elements/visual.twig' as visual %}
+{% import 'elements/button.twig' as button %}
+
+{% extends "blockwrap.twig" %}
+{% block blockcontent %}
+    <div class="col {{colclasses.col1}} pb__text">
+        <div class="box">
+        {% if block.label %}
+            <h5 class="pb__label">{{block.label}}</h5>
+        {% endif %}
+        {{ block.text }}
+        {{ button.button(block.link ) }}
+        </div>
+    </div>
+    <div class="col {{colclasses.col2}} pb__visual">
+       {{ visual.image(block.visual.visual, block.visualoptions.visualoptions ) }}
+    </div>
+{% endblock %}

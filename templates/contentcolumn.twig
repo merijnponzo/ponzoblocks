@@ -1,0 +1,20 @@
+{# contentcolumn single #}
+{% import 'elements/visual.twig' as visual %}
+{% import 'elements/button.twig' as button %}
+
+{% set colclass = 12 /  block.maxcolumns  %}
+
+ <div class="col ref-{{index}} col-{{colclass}} pb-contentcolumn {{tabclass}}">
+    <div class="box">
+        {% if column.visual %}
+        <div class="col--head">
+            {{ visual.image(column.visual, column.column ) }}
+         </div>
+         {% endif %}
+        <div class="col--content">
+            <h5 class="col--title">{{column.title}}</h5>
+            <div class="col--text">{{column.text}}</div>
+        </div>
+        {{ button.button(column.link ) }}
+    </div>
+</div>

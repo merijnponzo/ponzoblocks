@@ -1,0 +1,96 @@
+
+/* remove extra paddings */
+.pbe-heading, .pbe-visualsimple, .pbe-link, .pbe-design, .pbe-visual{
+    padding:0px;
+}
+/* remove first label */
+.pbe-heading > .acf-label, 
+.acf-field-clone > .acf-label, 
+.pbe-visualsimple > .acf-label,
+.pbe-visual > .acf-label,
+.pbe-design > .acf-label,
+.pbe-link > .acf-label
+{
+    display:none;
+}
+.acf-block-body{
+    min-height:50px;
+}
+
+.dummy-content{
+    display: block;
+}
+/* remove content tabs from editor */
+.edit-post-sidebar .acf-tab-group:first-child li:first-child{
+    display:none;
+}
+
+/* tab repeater */
+.acf-tab-repeater .acf-row{
+    display: none;
+}
+.acf-tab-repeater .acf-row .acf-fields{
+    width:100%;
+}
+.acf-row.acf-tabrepeater-active{
+    display:block!important;
+}
+.tab-expand{
+    background:white;
+    border-radius: 30px;
+    cursor: pointer;
+    display:inline-block;
+    list-style: none;
+    margin-right:10px;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    position: absolute;
+    right:0px;  
+}
+.acf-tabrepeater-nav li{
+        background: #cccccc;
+        border-radius: 30px;
+        cursor: pointer;
+        display:inline-block;
+        list-style: none;
+        margin-right:10px;
+        padding:5px;
+        padding-left:10px;
+        padding-right:10px;
+}
+.acf-tabrepeater-nav li.acf-tabrepeater-active{
+    background:#ccc;
+    color:#fff;
+}
+
+
+/* GUTENBERG EDITOR adjustments */
+.wp-block{
+    max-width: 100%;
+}
+/* prevents notification bar on top of small popup nav */
+.edit-post-visual-editor{
+    margin-top:30px;
+}
+.edit-post-sidebar .acf-tab-repeater{
+        display: none;
+}
+/* force the editor blocks to fit in a small viewport */
+.forcefit{
+    width:100%!important;
+}
+
+/* hide links */
+a.pb-link.area{
+    display:none;
+}
+
+.acf-block-preview .wrap{
+    margin:0 auto;
+    max-width: 960px;
+}
+
+.acf-block-preview .img--wrap{
+    background:#F0F8FF!important;
+}
