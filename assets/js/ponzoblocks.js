@@ -63,9 +63,9 @@
     if (pbBlock.length) {
       type = pbBlock.attr('data-type')
       if(mode == 'Preview'){
-        pbBlock.addClass('pb')
+        pbBlock.addClass('ponzo')
       }else{
-        pbBlock.removeClass('pb')
+        pbBlock.removeClass('ponzo')
       }
     }
    

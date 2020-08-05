@@ -14,12 +14,15 @@ function pb_addblockthemes()
             add_filter('acf/load_field/name=' . $block['name'].'theme' , function ($field) {
                 // get original name with replacing theme for ''
                 $blocktheme = str_replace('theme','', $field['name']);
-                // get the options, from ponzoblocks options repeaters
-                $options = get_field($blocktheme, 'option');
+                // get the rows, from ponzoblocks repeaters
+                $rows = get_field($blocktheme.'_themes', 'option');
                 $selectvalues = array();
-                foreach ((array) $options as $option) {
-                    if(!empty($option)){
-                        array_push($selectvalues, $option['name']);
+                foreach ((array) $rows as $row) {
+                    if(!empty($row)){
+                        // get the cloned blocktheme group within this repeater row
+                        if(array_key_exists('blocktheme',$row)){
+                            array_push($selectvalues, $row['blocktheme']['name']);
+                        }
                     }
                 }
                 // populate options

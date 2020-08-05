@@ -3,7 +3,7 @@
 Plugin Name: Ponzoblocks
 Plugin URI:  https://ponzotheme.nl/
 Description: Create page blocks with gutenberg and ponzoblocks
-Version:     0.0.1
+Version:     0.0.2
 Author:      Buro Ponzo
 Author URI:  https://www.buroponzo.nl
 Text Domain: ponzoblocks
@@ -42,7 +42,7 @@ class Ponzoblocks
         $this->assets = $url . '/assets';
         $this->themedir = get_template_directory();
         $this->themeurl = get_template_directory_uri();
-        $this->version = '0.0.2';
+        $this->version = '0.0.3';
         $this->fieldsversion = 'v1';
     }
 

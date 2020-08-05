@@ -94,3 +94,7 @@ a.pb-link.area{
 .acf-block-preview .img--wrap{
     background:#F0F8FF!important;
 }
+
+[data-preview_size="preview-size"]{
+    max-width:200px;
+}

@@ -1,0 +1,21 @@
+{# textfields #}
+{% macro all(block, blocktheme) %}
+   {# title #}
+   {% if block.title %}
+   <{{blocktheme.title_heading}} class="{{blocktheme.title_style}} {{blocktheme.title_size}}">
+      {{block.title}}
+   </{{blocktheme.title_heading}}>
+   {% endif %}
+   {# subtitle #}
+   {% if block.subtitle %}
+   <{{blocktheme.subtitle_heading}} class="{{blocktheme.subtitle_style}} {{blocktheme.subtitle_size}}">
+      {{block.subtitle}}
+   </{{blocktheme.subtitle_heading}}>
+   {% endif %}
+   {# text #}
+   {% if block.text %}
+   <{{blocktheme.text_heading}} class="{{blocktheme.text_style}} {{blocktheme.text_size}}">
+      {{block.text}}
+   </{{blocktheme.text_heading}}>
+   {% endif %}
+{% endmacro %}

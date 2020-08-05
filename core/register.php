@@ -11,10 +11,8 @@ function pb_blocktheme($blockname){
     $options = get_field($blockname.'_themes', 'options');
     $option = array();
     $current_theme = get_field($blockname . 'theme');
-    if (is_array($options) && !is_array($current_theme)) {
-        if (array_key_exists($current_theme, $options)) {
-            $option = $options[$current_theme];
-        }
+    if(isset($options[$current_theme]['blocktheme'])){
+        $option = $options[$current_theme]['blocktheme'];
     }
     return $option;
 }
@@ -80,7 +78,7 @@ function pb_blockrender( $block) {
     // Acf fields
     $context['block'] = get_fields();
     // Add options
-    $context['options'] = pb_blocktheme($blockname);
+    $context['blocktheme'] = pb_blocktheme($blockname);
     // Render the block.   
     Timber::render( $blockname.'.twig', $context );
 }

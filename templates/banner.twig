@@ -1,2 +1,17 @@
 {# banner #}
-dwwdwddwwdwd
+{% import 'elements/visual.twig' as visual %}
+{% import 'elements/button.twig' as button %}
+{% import 'elements/textfields.twig' as textfields %}
+
+{% extends "blockwrap.twig" %}
+{% block blockcontent %}
+    <div class="col col-{{blocktheme.textwidth}} pb__text">
+        <div class="box">
+        {{ textfields.all(block, blocktheme) }}
+        {{ button.button(block.link ) }}
+        </div>
+    </div>
+    <div class="col col-{{ 12 - blocktheme.textwidth}} pb__visual">
+       {{ visual.image(block.visual.visual, block.visualoptions.visualoptions ) }}
+    </div>
+{% endblock %}
