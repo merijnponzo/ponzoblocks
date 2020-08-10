@@ -11,8 +11,17 @@ function pb_blocktheme($blockname){
     $options = get_field($blockname.'_themes', 'options');
     $option = array();
     $current_theme = get_field($blockname . 'theme');
+    
     if(isset($options[$current_theme]['blocktheme'])){
         $option = $options[$current_theme]['blocktheme'];
+    }
+    // add other options as well (except the blocktheme clone)
+    if(isset($options[$current_theme])){
+        foreach($options[$current_theme] as $p => $other_option){
+            if($p !== 'blocktheme'){
+                $option[$p] = $other_option;
+            }
+        }
     }
     return $option;
 }
@@ -73,14 +82,23 @@ function pb_blockrender( $block) {
 
     $context = Timber::context();
     $blockname = $block['slug'];
+    $blocktheme = pb_blocktheme($blockname);
     // Add blockname
     $context['blockname'] = $blockname;
     // Acf fields
     $context['block'] = get_fields();
     // Add options
-    $context['blocktheme'] = pb_blocktheme($blockname);
-    // Render the block.   
-    Timber::render( $blockname.'.twig', $context );
+    $context['blocktheme'] = $blocktheme;
+    // Set default template from plugin folder
+    $twigtemplate = '@ponzoblocks/'.$blockname.'.twig';
+
+    if(isset($blocktheme['customtemplate'])) {
+        if(strlen($blocktheme['customtemplate']) > 2){
+            // within views/blocks folder in wordpress theme
+            $twigtemplate = '/ponzoblocks/'.$blocktheme['customtemplate'].'.twig';
+        }
+    }
+    Timber::render($twigtemplate, $context );
 }
 
 // allowed blocktypes

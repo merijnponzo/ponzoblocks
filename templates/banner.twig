@@ -1,17 +1,17 @@
 {# banner #}
-{% import 'elements/visual.twig' as visual %}
-{% import 'elements/button.twig' as button %}
-{% import 'elements/textfields.twig' as textfields %}
+{% import '@ponzoblocks/elements/visual.twig' as visual %}
+{% import '@ponzoblocks/elements/button.twig' as button %}
+{% import '@ponzoblocks/elements/textfields.twig' as textfields %}
 
-{% extends "blockwrap.twig" %}
+{% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
-    <div class="col col-{{blocktheme.textwidth}} pb__text">
+    <div class="col col-{{blocktheme.columnwidth}} pb__text">
         <div class="box">
         {{ textfields.all(block, blocktheme) }}
         {{ button.button(block.link ) }}
         </div>
     </div>
-    <div class="col col-{{ 12 - blocktheme.textwidth}} pb__visual">
+    <div class="col col-{{ 12 - blocktheme.columnwidth}} pb__visual">
        {{ visual.image(block.visual.visual, block.visualoptions.visualoptions ) }}
     </div>
 {% endblock %}

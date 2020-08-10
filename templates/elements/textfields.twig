@@ -1,4 +1,4 @@
-{# textfields #}
+{# all textfields #}
 {% macro all(block, blocktheme) %}
    {# title #}
    {% if block.title %}
@@ -19,3 +19,27 @@
    </{{blocktheme.text_heading}}>
    {% endif %}
 {% endmacro %}
+
+{# title #}
+{% macro title(block, blocktheme) %}
+    <{{blocktheme.title_heading}} class="{{blocktheme.title_style}} {{blocktheme.title_size}}">
+      {{block.title}}
+   </{{blocktheme.title_heading}}>
+{% endmacro %}
+{# / title #}
+
+{# title #}
+{% macro subtitle(block, blocktheme) %}
+   <{{blocktheme.subtitle_heading}} class="{{blocktheme.subtitle_style}} {{blocktheme.subtitle_size}}">
+      {{block.subtitle}}
+   </{{blocktheme.subtitle_heading}}>
+{% endmacro %}
+{# / title #}
+
+{# title #}
+{% macro text(block, blocktheme) %}
+   <{{blocktheme.text_heading}} class="{{blocktheme.text_style}} {{blocktheme.text_size}}">
+      {{block.text}}
+   </{{blocktheme.text_heading}}>
+{% endmacro %}
+{# / title #}

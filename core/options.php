@@ -21,7 +21,9 @@ function pb_addblockthemes()
                     if(!empty($row)){
                         // get the cloned blocktheme group within this repeater row
                         if(array_key_exists('blocktheme',$row)){
-                            array_push($selectvalues, $row['blocktheme']['name']);
+                            if(isset($row['blocktheme']['name'])){
+                                array_push($selectvalues, $row['blocktheme']['name']);
+                            }
                         }
                     }
                 }

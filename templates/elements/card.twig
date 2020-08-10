@@ -2,14 +2,12 @@
 {% import '@ponzoblocks/elements/visual.twig' as visual %}
 {% import '@ponzoblocks/elements/button.twig' as button %}
 {% import '@ponzoblocks/elements/textfields.twig' as textfields %}
-<div class="col col-{{blocktheme.columnwidth}} pb-contentcolumn">
-    {% if column.visual %}
+<div class="card col col-{{blocktheme.columnwidth}} pb-contentcolumn">
     <div class="cc__head">
-        {{ visual.image(column.visual, column.visualoptions.visualoptions ) }}
+        {{ visual.thumbnail(card, block.visualoptions.visualoptions) }}
     </div>
-    {% endif %}
     <div class="cc__text box">
-    {{ textfields.all(column, blocktheme) }}
-    {{ button.button(column.link ) }}
+    {{ textfields.all(card, blocktheme) }}
+    {{ button.button(card.link ) }}
     </div>
 </div>

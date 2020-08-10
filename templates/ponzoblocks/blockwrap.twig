@@ -1,10 +1,9 @@
 {% import "@ponzoblocks/elements/chapter.twig" as chapter %}
+
 <section class="pb__{{name}}">
-    <div class="wrap {{blocktheme.gutter}} {{'wid--fl' ?: blocktheme.wrap}}">
+    <div class="wrap {{blocktheme.gutter}} {{blocktheme.wrap ?: 'wid--fl'}}">
         {{chapter.heading(block.heading.heading)}}
-        <div class="row {{'siema' ?: blocktheme.slideshow }}" 
-        data-desktop="{{blocktheme.slidesdesktop}}" 
-        data-mobile="{{blocktheme.slidesmobile}}">
+        <div class="row">
            {% block blockcontent %}
                 content
             {% endblock %}

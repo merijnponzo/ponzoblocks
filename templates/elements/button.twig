@@ -3,9 +3,10 @@
     {# acf cloned element #}
     {% set link = link.link %}
     {# button #}
+
     {% if link.buttontext %}
         {% if link.type == 'extern' %}
-        <a class="btn {{link.theme}}" href="{{link.websitelink}}" target=""{{window}}>{{link.buttontext}}</a>
+        <a class="btn {{link.style}}" href="{{link.websitelink}}" target=""{{window}}>{{link.buttontext}}</a>
         {% elseif link.type == 'email' %}
         <a class="btn {{link.theme}}" href="mailto:{{link.email}}" target=""{{window}}>{{link.buttontext}}</a>
         {% elseif link.type == 'intern' %}
@@ -13,7 +14,7 @@
         {% if link.segment %}
             {% set internlink = link.pagelink ~ link.segment %}
         {% endif %}
-        <a class="btn {{link.theme}}" data-routelink="{{internlink}}" href="{{internlink}}" target=""{{window}}>{{link.buttontext}}</a>
+        <a class="btn {{link.style}}" href="{{internlink}}" target=""{{window}}>{{link.buttontext}}</a>
         {% endif %}
     {% endif %}
  {% endmacro %}

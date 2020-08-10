@@ -37,6 +37,14 @@ class Blocks{
                 'icon' => 'columns',
                 'script' => false,
             ),
+            array(
+                'name' => 'categories',
+                'slug' => 'categories',
+                'title' => 'Categories',
+                'description' => 'Create categories',
+                'icon' => 'columns',
+                'script' => false,
+            ),
             /*
             array(
                 'name' => 'tiles',

@@ -1,7 +1,7 @@
 {# contentcolumns #}
-{% extends "blockwrap.twig" %}
+{% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
         {% for column in block.contentcolumns %}
-                {% include 'contentcolumn.twig'  %}
+                {% include '@ponzoblocks/contentcolumn.twig'  %}
         {% endfor %}
 {% endblock %}
