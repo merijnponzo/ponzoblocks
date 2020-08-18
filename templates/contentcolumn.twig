@@ -2,14 +2,19 @@
 {% import '@ponzoblocks/elements/visual.twig' as visual %}
 {% import '@ponzoblocks/elements/button.twig' as button %}
 {% import '@ponzoblocks/elements/textfields.twig' as textfields %}
-<div class="col col-{{blocktheme.columnwidth}} pb-contentcolumn">
+<div class="col c{{blocktheme.columnwidth}} pb-contentcolumn">
     {% if column.visual %}
-    <div class="cc__head">
-        {{ visual.image(column.visual, column.visualoptions.visualoptions ) }}
+    <div class="pb__visual">
+         {{ visual.image(
+           column.visual, 
+           column.visualoptions) 
+        }}
+        {{ blocktheme.linkvisual ? button.button(column.link, blocktheme ) }}
     </div>
     {% endif %}
-    <div class="cc__text box">
+    <div class="pb__text box">
     {{ textfields.all(column, blocktheme) }}
-    {{ button.button(column.link ) }}
+    {# show cta below text if isnt nested within visual #}
+    {{ blocktheme.linkvisual == false ? button.button(column.link, blocktheme )}}
     </div>
 </div>

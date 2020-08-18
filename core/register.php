@@ -95,7 +95,7 @@ function pb_blockrender( $block) {
     if(isset($blocktheme['customtemplate'])) {
         if(strlen($blocktheme['customtemplate']) > 2){
             // within views/blocks folder in wordpress theme
-            $twigtemplate = '/ponzoblocks/'.$blocktheme['customtemplate'].'.twig';
+            $twigtemplate = $blocktheme['customtemplate'];
         }
     }
     Timber::render($twigtemplate, $context );

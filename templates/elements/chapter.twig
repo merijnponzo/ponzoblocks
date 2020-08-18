@@ -1,9 +1,11 @@
 {# section headingtitle #}
-{% macro heading(heading) %}
-<div class="chapter {{chapterclass}} align-{{align}}">
+{% macro heading(heading, blocktheme) %}
+{% if heading.title %}
+<div class="chapter align-{{align}} {{blocktheme.chapterclass}}">
     <h4 class="pb__chapter {{heading.titlefontsize}}"><span>{{heading.title}}</span></h4>
     {% if heading.subtitle %}
     <p class="pb__subchapter {{heading.subtitlefontsize}}"></p>
     {% endif %}
 </div>
+{% endif %}
 {% endmacro %}

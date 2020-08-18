@@ -39,10 +39,10 @@ class Ponzoblocks
         $this->file = __FILE__;
         $this->path = plugin_dir_path(__FILE__);
         $this->url = $url;
-        $this->assets = $url . '/assets';
+        $this->assets = $url . '/dist';
         $this->themedir = get_template_directory();
         $this->themeurl = get_template_directory_uri();
-        $this->version = '0.0.3';
+        $this->version = '0.0.4';
         $this->fieldsversion = 'v1';
     }
 
@@ -63,13 +63,13 @@ class Ponzoblocks
 
         wp_enqueue_script(
             'ponzoblocks-script',
-            $this->assets . '/js/ponzoblocks.js',
+            $this->assets . '/ponzoblocks.bundle.js',
             array(),
             $this->version
         );
         wp_enqueue_style(
             'ponzoblocks-style',
-            $this->assets . '/css/ponzoblocks.css',
+            $this->assets . '/ponzoblocks.css',
             array(),
             $this->version
         );

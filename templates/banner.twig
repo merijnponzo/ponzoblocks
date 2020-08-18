@@ -5,13 +5,18 @@
 
 {% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
-    <div class="col col-{{blocktheme.columnwidth}} pb__text">
+    <div class="col c{{blocktheme.columnwidth}} c6--s pb__text">
         <div class="box">
         {{ textfields.all(block, blocktheme) }}
-        {{ button.button(block.link ) }}
+         {# show cta below text if isnt nested within visual #}
+        {{ blocktheme.linkvisual == false ? button.button(block.link.link, blocktheme )}}
         </div>
     </div>
-    <div class="col col-{{ 12 - blocktheme.columnwidth}} pb__visual">
-       {{ visual.image(block.visual.visual, block.visualoptions.visualoptions ) }}
+    <div class="col c{{ 12 - blocktheme.columnwidth}} c6--s pb__visual">
+    {{ visual.image(
+        block.visual.visual, 
+        block.visualoptions.visualoptions)
+    }}
+    {{ blocktheme.linkvisual ? button.button(block.link.link, blocktheme ) }}
     </div>
 {% endblock %}

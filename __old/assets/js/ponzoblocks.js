@@ -11,8 +11,8 @@
       $(document).on('click', "[aria-label='Switch to Edit']", function(e) {
         pbInitMode('Edit')
       })
-
     }
+    console.log(window.checkViewport())
     //create promise to check when wp-block is found
     var promise = new Promise(function(resolve, reject) {
       var checker = setInterval(function() {

@@ -36,6 +36,36 @@ function pb_addblockthemes()
 }
 /*
 *
+*  Add theme icons from Ponzoblocks to theme_icons select dropdown
+*  pb_theme_icons > to > theme_icons
+*/
+function pb_addthemeicons()
+{
+    if (is_admin()) {
+        // add icons to select dropdown
+        add_filter('acf/load_field/name=theme_icons' , function ($field) {
+            // get theme icons from ponzoblocks textarea
+            $theme_icon_text = get_field('pb_theme_icons', 'option');
+            $theme_icons =  explode ( '<br />' ,$theme_icon_text );
+            $selectvalues = [];
+            // check for icons with minimal '.svg' length as extension
+            foreach ((array) $theme_icons as $icon) {
+                if(strlen($icon) > 4){
+                    $file = trim(str_replace('.svg','',$icon));
+                    $selectvalues[$file] = $file;
+                }
+            }
+            // populate options
+            $field['choices'] = $selectvalues;
+            // set default value
+            $theme_icons_default = get_field('pb_theme_icons_default', 'option');
+            $field['default_value'] = $theme_icons_default ;
+            return $field;
+        });
+    }
+}
+/*
+*
 *  Adds the ACF ponzoblocks options to the admin
 */
 // add ponzoblocks setup to wp-admin
@@ -49,5 +79,6 @@ acf_add_options_page(array(
 
 if(is_admin()){
     add_action('acf/init','pb_addblockthemes');
+    add_action('acf/init','pb_addthemeicons');
 }
 

@@ -1,20 +1,25 @@
 {# button #}
-{% macro button(link) %}
-    {# acf cloned element #}
-    {% set link = link.link %}
-    {# button #}
-
-    {% if link.buttontext %}
-        {% if link.type == 'extern' %}
-        <a class="btn {{link.style}}" href="{{link.websitelink}}" target=""{{window}}>{{link.buttontext}}</a>
-        {% elseif link.type == 'email' %}
-        <a class="btn {{link.theme}}" href="mailto:{{link.email}}" target=""{{window}}>{{link.buttontext}}</a>
-        {% elseif link.type == 'intern' %}
-        {% set internlink = link.pagelink %}
-        {% if link.segment %}
-            {% set internlink = link.pagelink ~ link.segment %}
-        {% endif %}
-        <a class="btn {{link.style}}" href="{{internlink}}" target=""{{window}}>{{link.buttontext}}</a>
-        {% endif %}
+{% macro button(link, blocktheme) %}
+{% if link.type != 'none'%}
+    {% if link.type == 'website'%}
+    <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{link.websitelink}}" target=""{{window}}>
+        <span class="icon-{{link.theme_icons}}"></span>
+        <span>{{link.buttontext}}</span>
+    </a>
+    {% elseif link.type == 'email' %}
+    <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="mailto:{{link.email}}" target=""{{window}}>
+        <span class="pi icon-{{link.theme_icons}}"></span>
+        <span>{{link.buttontext}}</span>
+    </a>
+    {% elseif link.type == 'intern' %}
+    {% set internlink = link.pagelink %}
+    {% if link.segment %}
+        {% set internlink = link.pagelink ~ link.segment %}
     {% endif %}
- {% endmacro %}
+    <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{internlink}}" target=""{{window}}>
+        <span class="pi icon-{{link.theme_icons}}"></span>
+        <span>{{link.buttontext ? link.buttontext : blocktheme.buttontext }}</span>
+    </a>
+    {% endif %}
+{% endif %}
+{% endmacro %}
