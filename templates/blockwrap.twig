@@ -1,9 +1,11 @@
 {% import "@ponzoblocks/elements/chapter.twig" as chapter %}
-<section class="pb__{{blocktheme.name}} pb__{{blockname}} {{ blocktheme.space ? 'space--' ~ blocktheme.space }}">
+<section class="pb__{{blocktheme.name}} pb__{{blockname}} space" data-s="{{blocktheme.space}}">
     <div class="wrap {{blocktheme.gutter}} {{'wid--fl' ? blocktheme.wrap}}">
+        {% if block.heading.heading %}
         <div class="row">
         {{chapter.heading(block.heading.heading, blocktheme)}}
         </div>
+        {% endif %}
         {# slideshow #}
         <div class="{{ blocktheme.slideshow  ? 'slider' : 'row' }}"
         {% if blocktheme.slideshow %}

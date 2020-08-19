@@ -97,6 +97,7 @@ import Ponzotheme from './js/ponzotheme'
     function pbSwitch(type, mode, block) {
       let callbackName = null
 
+      // init slideshows
       if(mode === 'Preview'){
           Ponzotheme.slideShows()
       }

@@ -2,7 +2,17 @@
 {% macro heading(heading, blocktheme) %}
 {% if heading.title %}
 <div class="chapter align-{{align}} {{blocktheme.chapterclass}}">
-    <h4 class="pb__chapter {{heading.titlefontsize}}"><span>{{heading.title}}</span></h4>
+    
+    <h4 class="pb__chapter {{heading.titlefontsize}}">
+    {% if heading.theme_icons != 'none' %}
+        <span class="pi icon-{{heading.theme_icons}}"></span>
+    {% endif %}
+    {% if heading.is_link %}
+    <span><a href="{{heading.heading_link.url}}">{{heading.title}}</a></span>
+    {% else %}
+    <span>{{heading.title}}</span>
+    {% endif %}
+    </h4>
     {% if heading.subtitle %}
     <p class="pb__subchapter {{heading.subtitlefontsize}}"></p>
     {% endif %}

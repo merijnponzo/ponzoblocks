@@ -1,14 +1,18 @@
 {# button #}
 {% macro button(link, blocktheme) %}
-{% if link.type != 'none'%}
+    {# link choice #}
     {% if link.type == 'website'%}
     <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{link.websitelink}}" target=""{{window}}>
-        <span class="icon-{{link.theme_icons}}"></span>
+        {% if link.theme_icons %}
+        <span class="pi icon-{{link.theme_icons}}"></span>
+        {% endif %}
         <span>{{link.buttontext}}</span>
     </a>
     {% elseif link.type == 'email' %}
     <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="mailto:{{link.email}}" target=""{{window}}>
+        {% if link.theme_icons %}
         <span class="pi icon-{{link.theme_icons}}"></span>
+        {% endif %}
         <span>{{link.buttontext}}</span>
     </a>
     {% elseif link.type == 'intern' %}
@@ -17,9 +21,18 @@
         {% set internlink = link.pagelink ~ link.segment %}
     {% endif %}
     <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{internlink}}" target=""{{window}}>
+        {% if link.theme_icons %}
         <span class="pi icon-{{link.theme_icons}}"></span>
+        {% endif %}
         <span>{{link.buttontext ? link.buttontext : blocktheme.buttontext }}</span>
     </a>
+    {# direct link with additional options in blocktheme #}
+    {% elseif link %}
+        <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{link}}" target=""{{blocktheme.window}}>
+        {% if link.theme_icons %}
+        <span class="pi icon-{{blocktheme.theme_icons}}"></span>
+        {% endif %}
+        <span>{{blocktheme.buttontext}}</span>
+    </a>
     {% endif %}
-{% endif %}
 {% endmacro %}

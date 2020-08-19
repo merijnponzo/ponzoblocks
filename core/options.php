@@ -48,6 +48,7 @@ function pb_addthemeicons()
             $theme_icon_text = get_field('pb_theme_icons', 'option');
             $theme_icons =  explode ( '<br />' ,$theme_icon_text );
             $selectvalues = [];
+            $selectvalues['none'] = 'none';
             // check for icons with minimal '.svg' length as extension
             foreach ((array) $theme_icons as $icon) {
                 if(strlen($icon) > 4){
