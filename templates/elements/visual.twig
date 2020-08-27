@@ -1,7 +1,7 @@
 {# visual #}
-{% macro image(visual, options) %}
+{% macro image(visual, options, blocktheme) %}
 {# acf cloned visual element #}
-<div class="visual">
+<div class="visual {{visual.image.width < visual.image.height ? 'portrait' : 'landscape'}}">
     <div class="img--wrap ratio--{{options.ratio}} mwid--{{options.size}}">
         <picture class="picture">
             {% if visual.imagemobile %}
@@ -11,30 +11,62 @@
             media="(max-width: 999px)" />
             {% else %}
             <source
-            class="img lazyload {{options.fit}}"
+            class="img lazyload {{options.fit}} {{options.position}} {{options.contain_desktop ? 'contain--l' : ''}}"
             data-srcset="{{visual.image.sizes.small}}"
             media="(max-width: 599px)" />
             {% endif %}
             <source
-            class="img lazyload {{options.fit}}"
+            class="img lazyload {{options.fit}} {{options.position}} {{options.contain_desktop ? 'contain--l' : ''}}"
             data-srcset="{{visual.image.sizes.medium}}"
             media="(max-width: 1199px)" />
             <img
             data-src="{{visual.image.sizes.large}}"
-            class="img lazyload {{options.fit}}"
+            class="img lazyload {{options.fit}} {{options.position}} {{options.contain_desktop ? 'contain--l' : ''}}"
             data-sizes="auto"/>
         </picture>
     </div>
  </div>
- {% endmacro %}
+{% endmacro %}
 {# default wordpress thumbnail #}
- {% macro thumbnail(post, options) %}
+{% macro thumbnail(post, options) %}
 <div class="visual">
     <div class="img--wrap ratio--{{options.ratio}} mwid--{{options.size}}">
-    <img class="img lazyload" src="{{ post.thumbnail.src }}" data-srcset="{{ post.thumbnail.src|retina(1) }} 1x,
-        {{ post.thumbnail.src|retina(2) }} 2x,
-        {{ post.thumbnail.src|retina(3) }} 3x,
-        {{ post.thumbnail.src|retina(4) }} 4x">
+    <img class="img lazyload" src="{{ post.thumbnail.src('thumbnail') }}" data-srcset="{{ post.thumbnail.src('thumbnail') }} 1x,
+        {{ post.thumbnail.src('medium') }} 2x,
+        {{ post.thumbnail.src('large') }} 4x">
     </div>
 </div>
  {% endmacro %}
+ {% macro slideshow(visuals, options) %}
+{# acf cloned visual element #}
+
+<div class="slider" data-mobile="1" data-desktop="1">
+    {% for row in visuals %}
+    <div class="visual">
+        <div class="img--wrap ratio--{{options.ratio}} mwid--{{options.size}}">
+            <picture class="picture">
+                {% if row.visual.imagemobile %}
+                <source
+                class="img"
+                data-srcset="{{row.visual.imagemobile.sizes.medium}}"
+                media="(max-width: 999px)" />
+                {% else %}
+                <source
+                class="img lazyload {{options.fit}}"
+                data-srcset="{{row.visual.image.sizes.small}}"
+                media="(max-width: 599px)" />
+                {% endif %}
+                <source
+                class="img lazyload {{options.fit}}"
+                data-srcset="{{row.visual.image.sizes.medium}}"
+                media="(max-width: 1199px)" />
+                <img
+                data-src="{{row.visual.image.sizes.large}}"
+                class="img lazyload {{options.fit}}"
+                data-sizes="auto"/>
+            </picture>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endmacro %}

@@ -17,11 +17,6 @@ add_theme_support( 'editor-color-palette' );
 function remove_title_tag() {
 	remove_post_type_support('page', 'title');
 }
-// disable gutenberg style in frront
-function wps_deregister_styles() {
-	wp_dequeue_style( 'wp-block-library' );
-}
-add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 
 // adds a category for the acf modules
 function PonzoblocksCategory( $categories, $post ) {

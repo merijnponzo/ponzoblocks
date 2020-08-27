@@ -45,6 +45,14 @@ class Blocks{
                 'icon' => 'columns',
                 'script' => false,
             ),
+            array(
+                'name' => 'textblock',
+                'slug' => 'textblock',
+                'title' => 'Text block',
+                'description' => 'Create textblocks',
+                'icon' => 'columns',
+                'script' => false,
+            ),
             /*
             array(
                 'name' => 'tiles',

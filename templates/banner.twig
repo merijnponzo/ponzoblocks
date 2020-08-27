@@ -2,17 +2,17 @@
 {% import '@ponzoblocks/elements/visual.twig' as visual %}
 {% import '@ponzoblocks/elements/button.twig' as button %}
 {% import '@ponzoblocks/elements/textfields.twig' as textfields %}
-
+{% set othercolumn = 12 - blocktheme.columnwidth %}
 {% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
-    <div class="col c{{blocktheme.columnwidth}} c6--s pb__text">
-        <div class="box">
+    <div class="c{{blocktheme.columnwidth}} c6--s pb__text {{ blocktheme.visualbg  ? 'wall' : ''}}">
+        <div class="box" data-theme="{{blocktheme.colortextcolumntheme}}">
         {{ textfields.all(block, blocktheme) }}
          {# show cta below text if isnt nested within visual #}
         {{ blocktheme.linkvisual == false ? button.button(block.link.link, blocktheme )}}
         </div>
     </div>
-    <div class="col c{{ 12 - blocktheme.columnwidth}} c6--s pb__visual">
+    <div class="{{ blocktheme.visualbg  ? 'wall' : 'c' ~ othercolumn ~ ' c6--s' }} pb__visual">
     {{ visual.image(
         block.visual.visual, 
         block.visualoptions.visualoptions)

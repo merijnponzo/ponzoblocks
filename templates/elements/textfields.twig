@@ -20,6 +20,28 @@
    {% endif %}
 {% endmacro %}
 
+{# secondclass textfields #}
+{% macro second(block, blocktheme) %}
+   {# title #}
+   {% if block.title_second %}
+   <{{blocktheme.title_heading_second}} class="{{blocktheme.title_style_second}} {{blocktheme.title_size_second}}">
+      {{block.title_second}}
+   </{{blocktheme.title_heading_second}}>
+   {% endif %}
+   {# subtitle #}
+   {% if block.subtitle_second %}
+   <{{blocktheme.subtitle_heading_second}} class="{{blocktheme.subtitle_style_second}} {{blocktheme.subtitle_size_second}}">
+      {{block.subtitle_second}}
+   </{{blocktheme.subtitle_heading_second}}>
+   {% endif %}
+   {# text #}
+   {% if block.text_second %}
+   <{{blocktheme.text_heading_second}} class="{{blocktheme.text_style_second}} {{blocktheme.text_size_second}}">
+      {{block.text_second}}
+   </{{blocktheme.text_heading_second}}>
+   {% endif %}
+{% endmacro %}
+
 {# title #}
 {% macro title(block, blocktheme) %}
     <{{blocktheme.title_heading}} class="{{blocktheme.title_style}} {{blocktheme.title_size}}">

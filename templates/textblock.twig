@@ -1,9 +1,8 @@
-{# textvisual #}
-{% import '@ponzoblocks/elements/visual.twig' as visual %}
+{# textblock #}
 {% import '@ponzoblocks/elements/button.twig' as button %}
 {% import '@ponzoblocks/elements/textfields.twig' as textfields %}
-
 {% extends "@ponzoblocks/blockwrap.twig" %}
+
 {% block blockcontent %}
     <div class="c{{blocktheme.columnwidth}} pb__text {{block.textposition}}">
         <div class="box">
@@ -12,11 +11,11 @@
         {{ blocktheme.linkvisual == false ? button.button(block.link.link, blocktheme )}}
         </div>
     </div>
-    <div class="c{{ 12 - blocktheme.columnwidth}} pb__visual">
-    {{ visual.image(
-        block.visual.visual, 
-        block.visualoptions.visualoptions)
-    }}
-    {{ blocktheme.linkvisual ? button.button(block.link.link, blocktheme ) }}
+   <div class="c{{blocktheme.columnwidth}} pb__text {{block.textposition}}">
+        <div class="box">
+        {{ textfields.second(block, blocktheme) }}
+        {# show cta below text if isnt nested within visual #}
+        {{ blocktheme.linkvisual == false ? button.button(block.link.link, blocktheme )}}
+        </div>
     </div>
 {% endblock %}

@@ -13,9 +13,41 @@ function pb_block_categories($categories, $post_type)
     return  $posts;
 }
 
+//creates a gallery from post types
+function pb_block_postsbyterm($categories, $taxonomy, $post_type)
+{
+    $posts = new Timber\PostQuery( array(
+        'query' => array(
+            'post_type'     => $post_type,
+            'relation' => 'OR',
+            'tax_query' => array(
+                array(
+                'taxonomy' => $taxonomy,
+                'field' => 'slug',
+                'terms' => $categories
+                )
+            )
+        ),
+    ));
+  
+    return  $posts;
+}
 
-
-
+/*
+*
+*  Get theme for block
+*/
+function pb_blockthemesingle($blockname, $current_theme){
+    //get block options
+    $blockthemes = get_field($blockname.'_themes', 'options');
+    foreach($blockthemes as $theme){
+        if(isset($theme['blocktheme']['name'])){
+            if($theme['blocktheme']['name'] == $current_theme){
+                return $theme['blocktheme'];
+            }
+        }
+    }
+}
 
 // get term by parent
 // {% set terms = function('pb_post_term_children', 'assortiment-category', 'leeftijd') %}

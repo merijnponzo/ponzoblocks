@@ -1,5 +1,5 @@
 {# button #}
-{% macro button(link, blocktheme) %}
+{% macro button(link, blocktheme, directlink) %}
     {# link choice #}
     {% if link.type == 'website'%}
     <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{link.websitelink}}" target=""{{window}}>
@@ -27,8 +27,8 @@
         <span>{{link.buttontext ? link.buttontext : blocktheme.buttontext }}</span>
     </a>
     {# direct link with additional options in blocktheme #}
-    {% elseif link %}
-        <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{link}}" target=""{{blocktheme.window}}>
+    {% elseif directlink %}
+        <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{directlink}}" target=""{{blocktheme.window}}>
         {% if link.theme_icons %}
         <span class="pi icon-{{blocktheme.theme_icons}}"></span>
         {% endif %}
