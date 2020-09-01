@@ -8,14 +8,14 @@
         <div class="box">
         {{ textfields.all(block, blocktheme) }}
         {# show cta below text if isnt nested within visual #}
-        {{ blocktheme.linkvisual == false ? button.button(block.link.link, blocktheme )}}
+        {{ button.button(block.link.link, blocktheme )}}
         </div>
     </div>
    <div class="c{{blocktheme.columnwidth}} pb__text {{block.textposition}}">
         <div class="box">
         {{ textfields.second(block, blocktheme) }}
         {# show cta below text if isnt nested within visual #}
-        {{ blocktheme.linkvisual == false ? button.button(block.link.link, blocktheme )}}
+        {{ button.button(block.link.link, blocktheme )}}
         </div>
     </div>
 {% endblock %}

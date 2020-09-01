@@ -4,6 +4,8 @@ import Ponzotheme from './js/ponzotheme'
 ;(function($) {
     //on ready
     $(document).ready(function() {
+      // remove block patterns
+      $('#tab-panel-0-patterns').remove();
       //init builder within dashboard (wpwrap)
       if (document.getElementById('wpwrap')) {
         //when preview is clicked in block
