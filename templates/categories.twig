@@ -1,7 +1,7 @@
 {# contentcolumns #}
 {% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
-   {% set cards = function('pb_block_categories', block.categories, blocktheme.posttype) %}
+   {% set cards = function('pb_block_categories', block) %}
    {% for card in cards %}
         {% include blocktheme.cardtemplate  %}        
    {% endfor %}

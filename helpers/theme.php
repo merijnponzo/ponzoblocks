@@ -1,15 +1,22 @@
 <?php
 
 //creates a gallery from post types
-function pb_block_categories($categories, $post_type)
+function pb_block_categories($block)
 {
-    $posts = new Timber\PostQuery( array(
-        'query' => array(
-            'post_type'     => $post_type,
-            'tax_query' => $categories,
-        ),
-    ));
-  
+    // button group posttype
+    $posttype = $block['posttype'];
+    // categories_posttype
+    if(array_key_exists('categories_'.$posttype, $block)){
+        $taxquery = $block['categories_'.$posttype];
+        $posts = new Timber\PostQuery( array(
+            'query' => array(
+                'post_type'     => $posttype,
+                'tax_query' => $taxquery,
+            ),
+        ));
+    }else{
+        $posts = [];
+    }
     return  $posts;
 }
 
@@ -29,7 +36,6 @@ function pb_block_postsbyterm($categories, $taxonomy, $post_type)
             )
         ),
     ));
-  
     return  $posts;
 }
 

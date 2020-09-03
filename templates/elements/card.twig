@@ -4,10 +4,13 @@
 {% import '@ponzoblocks/elements/textfields.twig' as textfields %}
 <div class="card col c{{blocktheme.columnwidth}} pb-contentcolumn">
     <div class="cc__head">
-        {{ visual.thumbnail(card, block.visualoptions.visualoptions) }}
+        {{ visual.thumbnail(card, blocktheme.visual ? blocktheme.visual : block.visualoptions.visualoptions  ) }}
+        {{ blocktheme.linkvisual ? button.button(false, blocktheme, card.link ) }}
     </div>
     <div class="cc__text box">
     {{ textfields.all(card, blocktheme) }}
-    {{ button.button(card.link ) }}
+    {% if blocktheme.linkvisual == false %}
+       {{ button.button(false, blocktheme, card.link ) }}
+    {% endif %}
     </div>
 </div>

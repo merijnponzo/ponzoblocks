@@ -34,6 +34,7 @@ function pb_addblockthemes()
         }
     }
 }
+
 /*
 *
 *  Add theme icons from Ponzoblocks to theme_icons select dropdown

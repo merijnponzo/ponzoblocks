@@ -2,7 +2,6 @@
 {% macro heading(heading, blocktheme) %}
 {% if heading.title %}
 <div class="chapter align-{{align}} {{blocktheme.chapterclass}}">
-    
     <h4 class="pb__chapter {{heading.titlefontsize}}">
     {% if heading.theme_icons != 'none' %}
         <span class="pi icon-{{heading.theme_icons}}"></span>
@@ -15,6 +14,23 @@
     </h4>
     {% if heading.subtitle %}
     <p class="pb__subchapter {{heading.subtitlefontsize}}">{{heading.subtitle}}</p>
+    {% endif %}
+    {# heading beackground #}
+    {% if heading.background %}
+    <div class="pb__background visual {{heading.background.width < heading.background.height ? 'portrait' : 'landscape'}}">
+        <div class="img--wrap ratio--4x3">
+            <picture class="picture">
+            <source
+                class="img lazyload"
+                data-srcset="{{heading.background.sizes.medium}}"
+                media="(max-width: 1199px)" />
+                <img
+                data-src="{{heading.background.sizes.large}}"
+                class="img lazyload"
+                data-sizes="auto"/>
+            </picture>
+        </div>
+    </div>
     {% endif %}
 </div>
 {% endif %}

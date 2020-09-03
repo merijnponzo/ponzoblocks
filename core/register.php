@@ -34,7 +34,7 @@ function pb_allowedblocks(){
     // allowed core blocks
     $allowed_blocks = array( 
         'core/block',
-        'core/columns',
+        //'core/columns',
         'core/template'
     );
     //add them to allowed blocks
@@ -91,7 +91,7 @@ function pb_blockrender( $block) {
     $context['blocktheme'] = $blocktheme;
     // Set default template from plugin folder
     $twigtemplate = '@ponzoblocks/'.$blockname.'.twig';
-
+   
     if(isset($blocktheme['customtemplate'])) {
         if(strlen($blocktheme['customtemplate']) > 2){
             // within views/blocks folder in wordpress theme
