@@ -1,0 +1,14 @@
+{# textblock #}
+{% import '@ponzoblocks/elements/button.twig' as button %}
+{% extends "@ponzoblocks/blockwrap.twig" %}
+
+{% block blockcontent %}
+    <div class="c12 pb__text">
+        <div class="box">
+        {# show full html #}
+        {{ block.text|wpautop }}
+        {# show cta below text if isnt nested within visual #}
+        {{ button.button(block.link.link, blocktheme )}}
+        </div>
+    </div>
+{% endblock %}

@@ -53,6 +53,14 @@ class Blocks{
                 'icon' => 'columns',
                 'script' => false,
             ),
+            array(
+                'name' => 'articleblock',
+                'slug' => 'articleblock',
+                'title' => 'Article block',
+                'description' => 'Create articleblocks',
+                'icon' => 'columns',
+                'script' => false,
+            ),
             /*
             array(
                 'name' => 'tiles',

@@ -36,3 +36,12 @@
     </a>
     {% endif %}
 {% endmacro %}
+
+{% macro singlebutton(link, buttontext = 'meer', buttontype = "bg", icon = false, target = '_self') %}
+        <a class="btn {{buttontype}}" href="{{link}}" target="{{target}}">
+        {% if icon %}
+        <span class="pi icon-{{icon}}"></span>
+        {% endif %}
+        <span>{{buttontext}}</span>
+    </a>
+{% endmacro %}
