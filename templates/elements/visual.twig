@@ -70,3 +70,25 @@
     {% endfor %}
 </div>
 {% endmacro %}
+{# visual #}
+{% macro imagecustom(visual, ratio = '4x3', size = 'full', position = 'center' , fit = 'contain', contain_desktop = 0 ) %}
+{# acf cloned visual element #}
+<div class="visual {{visual.width < visual.height ? 'portrait' : 'landscape'}} mwid--{{size}}">
+    <div class="img--wrap ratio--{{ratio}}">
+        <picture class="picture">
+            <source
+            class="img lazyload {{fit}} {{position}} {{contain_desktop ? 'contain--l' : ''}}"
+            data-srcset="{{visual.sizes.small}}"
+            media="(max-width: 599px)" />
+            <source
+            class="img lazyload {{fit}} {{position}} {{contain_desktop ? 'contain--l' : ''}}"
+            data-srcset="{{visual.sizes.medium}}"
+            media="(max-width: 1199px)" />
+            <img
+            data-src="{{visual.sizes.large}}"
+            class="img lazyload {{fit}} {{position}} {{contain_desktop ? 'contain--l' : ''}}"
+            data-sizes="auto"/>
+        </picture>
+    </div>
+ </div>
+{% endmacro %}

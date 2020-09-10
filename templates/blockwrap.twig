@@ -1,6 +1,6 @@
 {% import "@ponzoblocks/elements/chapter.twig" as chapter %}
 <section class="pb__{{blocktheme.name}} pb__{{blockname}} space" data-s="{{blocktheme.space}}" data-theme="{{blocktheme.colortheme}}">
-    <div class="wrap {{blocktheme.gutter}} {{'wid--fl' ? blocktheme.wrap}} {{ blocktheme.visualbg  ? 'no--flow' : '' }}">
+    <div class="wrap {{blocktheme.gutter}} {{blocktheme.wrap ? '' : 'wid--fl'}} {{ blocktheme.visualbg  ? 'no--flow' : '' }}">
         {% if block.heading.heading %}
         <div class="row">
         {{chapter.heading(block.heading.heading, blocktheme)}}
