@@ -91,7 +91,6 @@ function pb_blockrender( $block) {
     $context['blocktheme'] = $blocktheme;
     // Set default template from plugin folder
     $twigtemplate = '@ponzoblocks/'.$blockname.'.twig';
-   
     if(isset($blocktheme['customtemplate'])) {
         if(strlen($blocktheme['customtemplate']) > 2){
             // within views/blocks folder in wordpress theme

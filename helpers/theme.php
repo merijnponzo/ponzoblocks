@@ -69,3 +69,10 @@ function pb_post_term_children($taxonomy_name, $term_parent){
     }
     return $terms_result;
 }
+
+// get another block, and render it
+function pb_get_otherblock( $post_id ) {
+    $reuse_block = get_post( $post_id );
+    $reuse_block_content = apply_filters( 'the_content', $reuse_block->post_content);
+    return $reuse_block_content;
+}
