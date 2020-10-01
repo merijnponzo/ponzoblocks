@@ -82,8 +82,13 @@ function pb_addfilterlinks()
                 $post_type = get_taxonomy( $term->taxonomy );
                 if(is_object($post_type)){                 
                     if(isset($post_type->object_type[0])){
-                        $link = get_term_link($term->term_id);
-                        $selectvalues[$link] =  $link;
+                        $post_type_value =  $post_type->object_type[0];
+                        if($post_type_value !== 'nav_menu_item'){
+                            if($term->taxonomy !== 'post_tag'){
+                                $link = get_term_link($term->term_id);
+                                $selectvalues[$link] =  $link;
+                            }
+                        }
                     }
                 }
             }
