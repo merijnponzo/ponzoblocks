@@ -1,0 +1,257 @@
+{
+    "key": "group_5c3dd9fe0dc42",
+    "title": "pb link",
+    "fields": [
+        {
+            "key": "field_5c3dda0254c32",
+            "label": "link",
+            "name": "link",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "pbe-link",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5c41a74cf17e4",
+                    "label": "type",
+                    "name": "type",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "none": "none",
+                        "intern": "intern",
+                        "extern": "extern",
+                        "email": "email",
+                        "filter": "filter"
+                    },
+                    "allow_null": 0,
+                    "default_value": "none",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_5c4197a5f6082",
+                    "label": "page link",
+                    "name": "pagelink",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c41a74cf17e4",
+                                "operator": "==",
+                                "value": "intern"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "allow_null": 1,
+                    "allow_archives": 1,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5c4197b8f6083",
+                    "label": "website link",
+                    "name": "websitelink",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c41a74cf17e4",
+                                "operator": "==",
+                                "value": "extern"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_5c41a7c3f17e6",
+                    "label": "email",
+                    "name": "email",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c41a74cf17e4",
+                                "operator": "==",
+                                "value": "email"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f74687328a47",
+                    "label": "filterlink",
+                    "name": "filterlink",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5c41a74cf17e4",
+                                "operator": "==",
+                                "value": "filter"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "http:\/\/bianco.test\/gewicht\/1kg": "http:\/\/bianco.test\/gewicht\/1kg",
+                        "http:\/\/bianco.test\/gewicht\/3kg": "http:\/\/bianco.test\/gewicht\/3kg",
+                        "http:\/\/bianco.test\/gewicht\/5kg": "http:\/\/bianco.test\/gewicht\/5kg",
+                        "http:\/\/bianco.test\/assortiment\/soort\/droogvoer": "http:\/\/bianco.test\/assortiment\/soort\/droogvoer",
+                        "http:\/\/bianco.test\/leeftijd\/kitten": "http:\/\/bianco.test\/leeftijd\/kitten",
+                        "http:\/\/bianco.test\/assortiment\/soort\/natvoer": "http:\/\/bianco.test\/assortiment\/soort\/natvoer",
+                        "http:\/\/bianco.test\/?taxonomy=nav_menu&term=primary-menu": "http:\/\/bianco.test\/?taxonomy=nav_menu&term=primary-menu",
+                        "http:\/\/bianco.test\/?taxonomy=nav_menu&term=secondary-menu": "http:\/\/bianco.test\/?taxonomy=nav_menu&term=secondary-menu"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5c4197d3f6084",
+                    "label": "window",
+                    "name": "window",
+                    "type": "button_group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "_self": "_self",
+                        "_blank": "_blank"
+                    },
+                    "allow_null": 0,
+                    "default_value": "_self",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_5c419815f6085",
+                    "label": "buttontext",
+                    "name": "buttontext",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f2abf5266ff7",
+                    "label": "theme icons",
+                    "name": "theme_icons",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "none": "none",
+                        "p_hexaprev": "p_hexaprev",
+                        "p_burger": "p_burger",
+                        "p_circlenext": "p_circlenext",
+                        "p_circleprev": "p_circleprev",
+                        "p_close": "p_close",
+                        "p_fb": "p_fb",
+                        "p_heart": "p_heart",
+                        "p_hexa": "p_hexa",
+                        "p_hexanext": "p_hexanext",
+                        "p_hexaplugs": "p_hexaplugs"
+                    },
+                    "default_value": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "buttons",
+    "modified": 1601540910
+}
