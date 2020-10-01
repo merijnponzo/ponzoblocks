@@ -3,10 +3,28 @@
 namespace Ponzoblocks\core;
 
 new BlocksLocalJson();
-  
+
+// https://support.advancedcustomfields.com/forums/topic/is-it-possible-to-have-local-json-files-in-both-theme-and-plugin-folders/
+
 class BlocksLocalJson {
     
-    private $groups = [];
+    private $groups = [
+        // blocktheme layout
+        'group_5f2a6bea9d498',
+        // pb heading
+        'group_5c4863169cc9b',
+        // pb link
+        'group_5c3dd9fe0dc42',
+        // pb theme options
+        'group_5c51b38ae0193',
+        // ponzoblocks
+        'group_5c48d31ccd99c',
+        // pb visualoptions
+        'group_5c6bdcecdb96f',
+        // pb visual
+        'group_5c41f6fb4becf'
+
+    ];
 
     public function __construct() {
         foreach((array) Blocks::getBlocks() as $block){
@@ -14,10 +32,15 @@ class BlocksLocalJson {
                 array_push( $this->groups, $block['group']);
             }
         }
-      // add fitler before acf saves a group
-      add_action('acf/update_field_group', array($this, 'update_field_group'), 1, 1);
-    } // end public function __construct
-    
+        // add filter before acf saves a group
+        add_action('acf/update_field_group', array($this, 'update_field_group'), 1, 1);
+        // Load - includes the /acf-json folder in this plugin to the places to look for ACF Local JSON files
+        add_filter('acf/settings/load_json', function($paths) {
+            $paths[] = dirname(plugin_dir_path(__FILE__)) . '/acf-json';
+            return $paths;
+        });
+    }
+
     public function update_field_group($group) {
       // called when ACF save the field group to the DB
       if (in_array($group['key'], $this->groups)) {
@@ -35,5 +58,6 @@ class BlocksLocalJson {
       $path = dirname(plugin_dir_path(__FILE__)).'/acf-json';
       return $path;
     } // end public function override_json_location
+    
     
 }
