@@ -32,17 +32,17 @@
                 "id": ""
             },
             "choices": {
-                "post_category_27": "post - voeding",
-                "post_category_1": "post - training",
-                "assortiment_soort_18": "assortiment - snackjes",
-                "assortiment_leeftijd_20": "assortiment - senior",
-                "assortiment_leeftijd_21": "assortiment - puppy",
-                "assortiment_soort_17": "assortiment - natvoer",
-                "assortiment_soort_16": "assortiment - droogvoer",
-                "assortiment_leeftijd_26": "assortiment - adult-mini",
-                "assortiment_leeftijd_19": "assortiment - adult",
-                "assortiment_gewicht_22": "assortiment - 1kg",
-                "assortiment_gewicht_23": "assortiment - 10kg"
+                "assortiment_gewicht_23": "10kg (<strong>gewicht<\/strong> assortiment)",
+                "assortiment_gewicht_22": "1kg (<strong>gewicht<\/strong> assortiment)",
+                "assortiment_leeftijd_19": "adult (<strong>leeftijd<\/strong> assortiment)",
+                "assortiment_leeftijd_26": "adult-mini (<strong>leeftijd<\/strong> assortiment)",
+                "assortiment_soort_16": "droogvoer (<strong>soort<\/strong> assortiment)",
+                "assortiment_soort_17": "natvoer (<strong>soort<\/strong> assortiment)",
+                "assortiment_leeftijd_21": "puppy (<strong>leeftijd<\/strong> assortiment)",
+                "assortiment_leeftijd_20": "senior (<strong>leeftijd<\/strong> assortiment)",
+                "assortiment_soort_18": "snackjes (<strong>soort<\/strong> assortiment)",
+                "post_category_1": "training (<strong>category<\/strong> post)",
+                "post_category_27": "voeding (<strong>category<\/strong> post)"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -76,7 +76,7 @@
                 "18": "18",
                 "20": "20"
             },
-            "default_value": false,
+            "default_value": 6,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -214,5 +214,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601550649
+    "modified": 1601552539
 }

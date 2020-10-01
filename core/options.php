@@ -103,17 +103,20 @@ function pb_selectedcategories()
     if (is_admin()) {
         // add icons to select dropdown
         add_filter('acf/load_field/name=selectedcategories' , function ($field) {
-            $terms  = get_terms(['hide_empty' => false, 'orderby' => 'name', 'order' => 'DESC' ]);
+            $terms  = get_terms(['hide_empty' => false, 'orderby' => 'name', 'order' => 'ASC' ]);
             $selectvalues = [];
             foreach ((array) $terms as $term) {
                 $post_type = get_taxonomy( $term->taxonomy );
                 if(is_object($post_type)){                 
                     if(isset($post_type->object_type[0])){
                         $post_type_value =  $post_type->object_type[0];
+                        
                         if($post_type_value !== 'nav_menu_item'){
                             // store post_type and term_id
-                            $value = $post_type_value.'_'.$term->taxonomy.'_'.$term->term_id;
-                            $selectvalues[$value] = $post_type_value .' - '.$term->name;
+                            if($term->taxonomy !== 'post_tag'){
+                                $value = $post_type_value.'_'.$term->taxonomy.'_'.$term->term_id;
+                                $selectvalues[$value] =  $term->name . ' (<strong>'.$term->taxonomy.'</strong> '.$post_type_value .')';
+                            }
                         }
                     }
                 }

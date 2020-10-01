@@ -40,7 +40,6 @@ function pb_block_categories($block)
             $operator = 'OR';
         }
         foreach((array) $taxonomies as $key => $taxonomy){
-           
             $tax_query =
                 [
                     'taxonomy' => $key,
