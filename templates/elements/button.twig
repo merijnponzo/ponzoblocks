@@ -10,6 +10,8 @@
         {% if link.segment %}
             {% set href = link.pagelink ~ link.segment %}
         {% endif %}
+    {% elseif link.type == 'filter'%}
+        {% set href= link.filterlink %}
     {% endif %}
         {% if href %}
         <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{href}}" target=""{{blocktheme.window}}>

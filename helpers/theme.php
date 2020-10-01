@@ -7,11 +7,31 @@ function pb_block_categories($block)
     $posttype = $block['posttype'];
     // categories_posttype
     if(array_key_exists('categories_'.$posttype, $block)){
-        $taxquery = $block['categories_'.$posttype];
+        $taxonomies = $block['categories_'.$posttype];
+        $terms = [];
+        foreach((array) $taxonomies as $taxonomy){
+            // should match the term_object within acf taxonomy
+            if(is_object($taxonomy)){
+                array_push($terms,  $taxonomy->term_id);
+                // get the taxonomy name
+                $taxonomy = $taxonomy->taxonomy;
+            }else{
+                print_r('create a term_object within acf taxonomy instead of term_id');
+            }
+        }
+        $taxquery = [
+            [
+                'taxonomy' => $taxonomy,
+                'field' => 'term_id',
+                'terms' => $terms,
+                'operator' => 'IN'
+            ]
+        ];
+       
         $posts = new Timber\PostQuery( array(
             'query' => array(
                 'post_type'     => $posttype,
-                'tax_query' => $taxquery,
+                'tax_query' =>  $taxquery,
             ),
         ));
     }else{

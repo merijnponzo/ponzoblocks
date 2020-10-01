@@ -34,7 +34,6 @@ function pb_addblockthemes()
         }
     }
 }
-
 /*
 *
 *  Add theme icons from Ponzoblocks to theme_icons select dropdown
@@ -66,6 +65,32 @@ function pb_addthemeicons()
         });
     }
 }
+
+/*
+*
+*  Add taxonomies and categories to the links module
+*/
+function pb_addfilterlinks()
+{
+    if (is_admin()) {
+        // add icons to select dropdown
+        add_filter('acf/load_field/name=filterlink' , function ($field) {
+            $terms  = get_terms(['hide_empty' => false]);
+            $selectvalues = [];
+           
+            foreach ((array) $terms as $term) {
+                $post_type = get_taxonomy( $term->taxonomy )->object_type[0];
+                if($post_type !== 'post'){
+                    $link = get_term_link($term->term_id);
+                    $selectvalues[$link] =  $link;
+                }
+            }
+            // populate options
+            $field['choices'] = $selectvalues;
+            return $field;
+        });
+    }
+}
 /*
 *
 *  Adds the ACF ponzoblocks options to the admin
@@ -82,5 +107,6 @@ acf_add_options_page(array(
 if(is_admin()){
     add_action('acf/init','pb_addblockthemes');
     add_action('acf/init','pb_addthemeicons');
+    add_action('acf/init','pb_addfilterlinks');
 }
 

@@ -5,7 +5,7 @@
 {% set othercolumn = 12 - blocktheme.columnwidth %}
 {% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
-    <div class="c{{blocktheme.columnwidth}} c6--s pb__text {{ blocktheme.visualbg  ? 'wall' : ''}}">
+    <div class="c{{blocktheme.columnwidth}} pb__text {{ blocktheme.visualbg  ? 'wall' : ''}}">
         <div class="box" data-theme="{{blocktheme.colortextcolumntheme}}">
         {{ textfields.all(block, blocktheme) }}
          {# show cta below text if isnt nested within visual #}

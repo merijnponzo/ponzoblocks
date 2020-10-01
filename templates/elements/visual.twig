@@ -29,17 +29,16 @@
 {% endmacro %}
 {# default wordpress thumbnail #}
 {% macro thumbnail(post, options) %}
-<div class="visual">
-    <div class="img--wrap ratio--{{options.ratio}} mwid--{{options.size}}">
+<div class="visual ratio--{{options.ratio}}">
+    <div class="img--wrap mwid--{{options.size}}">
     <img class="img lazyload" src="{{ post.thumbnail.src('thumbnail') }}" data-srcset="{{ post.thumbnail.src('thumbnail') }} 1x,
         {{ post.thumbnail.src('medium') }} 2x,
         {{ post.thumbnail.src('large') }} 4x">
     </div>
 </div>
  {% endmacro %}
- {% macro slideshow(visuals, options) %}
+{% macro slideshow(visuals, options) %}
 {# acf cloned visual element #}
-
 <div class="slider" data-mobile="1" data-desktop="1">
     {% for row in visuals %}
     <div class="visual">

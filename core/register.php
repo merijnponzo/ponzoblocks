@@ -99,7 +99,6 @@ function pb_blockrender( $block) {
     }
     Timber::render($twigtemplate, $context );
 }
-
 // allowed blocktypes
 add_filter('allowed_block_types', 'pb_allowedblocks');
 add_action('acf/init','pb_registerblocks');

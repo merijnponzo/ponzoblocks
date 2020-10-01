@@ -15,6 +15,7 @@ defined('ABSPATH') or die('Really?');
 require "core/blocks.php";
 require "core/options.php";
 require "core/register.php";
+require "core/localjson.php";
 require "helpers/theme.php";
 require "helpers/reset.php";
 

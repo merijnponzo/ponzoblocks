@@ -4,7 +4,7 @@
 <div class="chapter align-{{align}} {{blocktheme.chapterclass}}">
     <h4 class="pb__chapter {{heading.titlefontsize}}">
     {% if heading.theme_icons != 'none' %}
-        <span class="pi icon-{{heading.theme_icons}}"></span>
+        <span class="pi icon-{{heading.theme_icons}} {{blocktheme.chaptericonsize}}"></span>
     {% endif %}
     {% if heading.is_link %}
     <span><a href="{{heading.heading_link.url}}">{{heading.title}}</a></span>

@@ -1,0 +1,177 @@
+{
+    "key": "group_5c6bdcecdb96f",
+    "title": "pb visual options",
+    "fields": [
+        {
+            "key": "field_5c6bdcf12a165",
+            "label": "visualoptions",
+            "name": "visualoptions",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5c6bdd122a166",
+                    "label": "ratio",
+                    "name": "ratio",
+                    "type": "select",
+                    "instructions": "all ratio's for visuals",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "3x4": "portrait",
+                        "1x1": "square",
+                        "4x3": "landscape",
+                        "2x1": "landscape-wide",
+                        "16x9": "wide",
+                        "35x10": "wider",
+                        "3x1": "ultrawide"
+                    },
+                    "default_value": "landscape",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5c6bdd242a167",
+                    "label": "size",
+                    "name": "size",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "au": "full width in container",
+                        "50": "50px wide",
+                        "100": "100px wide",
+                        "200": "200px wide",
+                        "300": "300px wide",
+                        "400": "400px wide",
+                        "500": "500px wide",
+                        "600": "600px wide",
+                        "700": "700px wide",
+                        "800": "800px wide",
+                        "900": "900px wide",
+                        "1000": "1000px wide"
+                    },
+                    "default_value": "au",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5c6be01ea53e0",
+                    "label": "fit",
+                    "name": "fit",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "cover": "cover",
+                        "contain": "contain"
+                    },
+                    "default_value": "cover",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5f461863d3605",
+                    "label": "contain in desktop",
+                    "name": "contain_desktop",
+                    "type": "true_false",
+                    "instructions": "Keep image containment only for desktop",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5f4613955113a",
+                    "label": "position",
+                    "name": "position",
+                    "type": "select",
+                    "instructions": "vertical alignment of image within the box (works only for fit contain)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "default": "default",
+                        "top": "top",
+                        "center": "center",
+                        "bottom": "bottom"
+                    },
+                    "default_value": "default",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "modified": 1598429820
+}
