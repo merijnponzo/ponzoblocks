@@ -3,37 +3,62 @@
 //creates a gallery from post types
 function pb_block_categories($block)
 {
-    // button group posttype
-    $posttype = $block['posttype'];
+      //default
+     $postlimit = 6;
+     if(array_key_exists('postlimit', $block)){
+        $postlimit = $block['postlimit'];
+     }
+   
     // categories_posttype
-    if(array_key_exists('categories_'.$posttype, $block)){
-        $taxonomies = $block['categories_'.$posttype];
+     if(array_key_exists('selectedcategories', $block)){
+        $selectedcategories = $block['selectedcategories'];
         $terms = [];
-        foreach((array) $taxonomies as $taxonomy){
-            // should match the term_object within acf taxonomy
-            if(is_object($taxonomy)){
-                array_push($terms,  $taxonomy->term_id);
-                // get the taxonomy name
-                $taxonomy = $taxonomy->taxonomy;
-            }else{
-                print_r('create a term_object within acf taxonomy instead of term_id');
+        $taxonomies = [];
+        $post_types = [];
+       
+        
+        foreach((array) $selectedcategories as $term){
+            // Posttype_Taxonomy_termId
+            $values = explode('_',$term);
+            if(!empty($values)){
+                // create taxonomy array
+                if(!array_key_exists($values[1], $taxonomies)){
+                    $taxonomies[$values[1]] = array();
+                }
+                // with terms
+                array_push($taxonomies[$values[1]], $values[2]);
+                // and posttype
+                array_push($post_types, $values[0]);
             }
         }
-        $taxquery = [
-            [
-                'taxonomy' => $taxonomy,
-                'field' => 'term_id',
-                'terms' => $terms,
-                'operator' => 'IN'
-            ]
-        ];
-       
+        // build a query of different taxonomies and terms
+        $tax_queries = [];
+        // returns only
+        $operator = 'IN';
+        // returns all
+        if(count($post_types) > 1){
+            $operator = 'OR';
+        }
+        foreach((array) $taxonomies as $key => $taxonomy){
+           
+            $tax_query =
+                [
+                    'taxonomy' => $key,
+                    'field' => 'term_id',
+                    'terms' => $taxonomy,
+                    'operator' => $operator
+                ];
+            array_push( $tax_queries, $tax_query);
+        }
+        // do query within different post_types with different taxonomies
         $posts = new Timber\PostQuery( array(
             'query' => array(
-                'post_type'     => $posttype,
-                'tax_query' =>  $taxquery,
+                'post_type'     => array_unique($post_types),
+                'tax_query' =>  $tax_queries,
+                'posts_per_page' => $postlimit
             ),
         ));
+       
     }else{
         $posts = [];
     }

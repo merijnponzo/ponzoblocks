@@ -19,11 +19,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f50a8212fddf",
-            "label": "posttype",
-            "name": "posttype",
-            "type": "button_group",
-            "instructions": "",
+            "key": "field_5f759addcd814",
+            "label": "selectedcategories",
+            "name": "selectedcategories",
+            "type": "checkbox",
+            "instructions": "Choosing from the same post_type will filter exactly\r\nChoosing from multiple post_types will filter all",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -32,73 +32,24 @@
                 "id": ""
             },
             "choices": {
-                "post": "post",
-                "assortiment": "assortiment"
+                "post_category_27": "post - voeding",
+                "post_category_1": "post - training",
+                "assortiment_soort_18": "assortiment - snackjes",
+                "assortiment_leeftijd_20": "assortiment - senior",
+                "assortiment_leeftijd_21": "assortiment - puppy",
+                "assortiment_soort_17": "assortiment - natvoer",
+                "assortiment_soort_16": "assortiment - droogvoer",
+                "assortiment_leeftijd_26": "assortiment - adult-mini",
+                "assortiment_leeftijd_19": "assortiment - adult",
+                "assortiment_gewicht_22": "assortiment - 1kg",
+                "assortiment_gewicht_23": "assortiment - 10kg"
             },
-            "allow_null": 0,
-            "default_value": "",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
-            "key": "field_5f50a23d555bd",
-            "label": "categories post",
-            "name": "categories_post",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f50a8212fddf",
-                        "operator": "==",
-                        "value": "post"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "category",
-            "field_type": "checkbox",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
-            "key": "field_5f50a8562fde0",
-            "label": "categories assortiment",
-            "name": "categories_assortiment",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f50a8212fddf",
-                        "operator": "==",
-                        "value": "assortiment"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "soort",
-            "field_type": "checkbox",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
         },
         {
             "key": "field_5f74670c123c4",
@@ -263,5 +214,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601540946
+    "modified": 1601550649
 }
