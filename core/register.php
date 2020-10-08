@@ -12,14 +12,16 @@ function pb_blocktheme($blockname){
     $option = array();
     $current_theme = get_field($blockname . 'theme');
     
-    if(isset($options[$current_theme]['blocktheme'])){
-        $option = $options[$current_theme]['blocktheme'];
-    }
-    // add other options as well (except the blocktheme clone)
-    if(isset($options[$current_theme])){
-        foreach($options[$current_theme] as $p => $other_option){
-            if($p !== 'blocktheme'){
-                $option[$p] = $other_option;
+    if(is_array($options)){
+        if(isset($options[$current_theme]['blocktheme'])){
+            $option = $options[$current_theme]['blocktheme'];
+        }
+        // add other options as well (except the blocktheme clone)
+        if(isset($options[$current_theme])){
+            foreach((array) $options[$current_theme] as $p => $other_option){
+                if($p !== 'blocktheme'){
+                    $option[$p] = $other_option;
+                }
             }
         }
     }

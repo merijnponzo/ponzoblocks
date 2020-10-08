@@ -1539,6 +1539,11 @@
                 "param": "options_page",
                 "operator": "==",
                 "value": "theme-builder-settings"
+            },
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
             }
         ]
     ],
@@ -1550,5 +1555,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Ponzoblocks config",
-    "modified": 1601549627
+    "modified": 1602145973
 }
