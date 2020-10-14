@@ -304,25 +304,6 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
-        },
-        {
-            "key": "field_5f757b77b3a3a",
-            "label": "test3422",
-            "name": "tes34222",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -342,5 +323,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601539594
+    "modified": 1602664458
 }

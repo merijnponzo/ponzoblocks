@@ -65,7 +65,6 @@ function pb_addthemeicons()
         });
     }
 }
-
 /*
 *
 *  Add taxonomies and categories to the links module

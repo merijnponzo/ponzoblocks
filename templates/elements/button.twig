@@ -1,18 +1,17 @@
 {# button #}
 {% macro button(link, blocktheme, href) %}
-
     {% if link.type == 'website'%}
         {% set href= link.websitelink %}
     {% elseif link.type == 'email' %}
         {% set href= 'mailto:' ~ link.email %}
     {% elseif link.type == 'intern' %}
         {% set href = link.pagelink %}
-        {% if link.segment %}
-            {% set href = link.pagelink ~ link.segment %}
-        {% endif %}
     {% elseif link.type == 'filter'%}
         {% set href= link.filterlink %}
     {% endif %}
+        {% if link.anchor_link %}
+            {% set href = href ~ '#' ~ link.anchor_link|sanitize %}
+        {% endif %}
         {% if href %}
         <a class="btn {{blocktheme.buttonstyle}} {{blocktheme.buttonoutline ? 'line' }} {{blocktheme.buttonsize}}" href="{{href}}" target=""{{blocktheme.window}}>
             {% if link.theme_icons %}

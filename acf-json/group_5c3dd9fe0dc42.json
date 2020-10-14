@@ -141,14 +141,28 @@
                         "id": ""
                     },
                     "choices": {
-                        "http:\/\/bianco.test\/gewicht\/1kg": "http:\/\/bianco.test\/gewicht\/1kg",
-                        "http:\/\/bianco.test\/gewicht\/3kg": "http:\/\/bianco.test\/gewicht\/3kg",
-                        "http:\/\/bianco.test\/gewicht\/5kg": "http:\/\/bianco.test\/gewicht\/5kg",
-                        "http:\/\/bianco.test\/assortiment\/soort\/droogvoer": "http:\/\/bianco.test\/assortiment\/soort\/droogvoer",
-                        "http:\/\/bianco.test\/leeftijd\/kitten": "http:\/\/bianco.test\/leeftijd\/kitten",
-                        "http:\/\/bianco.test\/assortiment\/soort\/natvoer": "http:\/\/bianco.test\/assortiment\/soort\/natvoer",
-                        "http:\/\/bianco.test\/?taxonomy=nav_menu&term=primary-menu": "http:\/\/bianco.test\/?taxonomy=nav_menu&term=primary-menu",
-                        "http:\/\/bianco.test\/?taxonomy=nav_menu&term=secondary-menu": "http:\/\/bianco.test\/?taxonomy=nav_menu&term=secondary-menu"
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/voeding\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/voeding\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/verzorging\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/verzorging\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/training\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/training\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/senior\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/senior\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/puppy\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/puppy\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/puppy\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/category\/puppy\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/assortiment\/soort\/droogvoer\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/assortiment\/soort\/droogvoer\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/assortiment\/soort\/blikvoeding\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/assortiment\/soort\/blikvoeding\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/assortiment\/soort\/alu-kuipje-natvoeding\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/assortiment\/soort\/alu-kuipje-natvoeding\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/adult-mini\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/adult-mini\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/adult\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/leeftijd\/adult\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/810g\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/810g\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/5kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/5kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/4kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/4kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/410g\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/410g\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/3kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/3kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/2-5kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/2-5kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/1kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/1kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/18kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/18kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/150g\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/150g\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/14kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/14kg\/",
+                        "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/12kg\/": "http:\/\/localhost:8888\/wordpress\/belmondo\/gewicht\/12kg\/"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -214,16 +228,28 @@
                     },
                     "choices": {
                         "none": "none",
-                        "p_hexaprev": "p_hexaprev",
-                        "p_burger": "p_burger",
-                        "p_circlenext": "p_circlenext",
-                        "p_circleprev": "p_circleprev",
-                        "p_close": "p_close",
-                        "p_fb": "p_fb",
-                        "p_heart": "p_heart",
-                        "p_hexa": "p_hexa",
-                        "p_hexanext": "p_hexanext",
-                        "p_hexaplugs": "p_hexaplugs"
+                        "b_youtube": "b_youtube",
+                        "b_variety": "b_variety",
+                        "b_hart": "b_hart",
+                        "b_apple": "b_apple",
+                        "b_coldpressed": "b_coldpressed",
+                        "b_digestive": "b_digestive",
+                        "b_easydigestible": "b_easydigestible",
+                        "b_egg": "b_egg",
+                        "b_facebook": "b_facebook",
+                        "b_growth": "b_growth",
+                        "b_healthyskin": "b_healthyskin",
+                        "b_instagram": "b_instagram",
+                        "b_intestinal": "b_intestinal",
+                        "b_left": "b_left",
+                        "b_logo": "b_logo",
+                        "b_logofull": "b_logofull",
+                        "b_protection": "b_protection",
+                        "b_right": "b_right",
+                        "b_spirulina": "b_spirulina",
+                        "b_tasty": "b_tasty",
+                        "b_tomato": "b_tomato",
+                        "b_twitter": "b_twitter"
                     },
                     "default_value": "",
                     "allow_null": 0,
@@ -232,6 +258,44 @@
                     "return_format": "value",
                     "ajax": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_5f86b2d9cbdf4",
+                    "label": "anchor link",
+                    "name": "anchor_link",
+                    "type": "text",
+                    "instructions": "type the anchor link that refers to the anchor id from another block",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f86b681a9a3c",
+                    "label": "anchor id",
+                    "name": "anchor_id",
+                    "type": "text",
+                    "instructions": "create an (unique within the same page) anchor ID to refer from an anchor link in another block",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -253,5 +317,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "buttons",
-    "modified": 1601540910
+    "modified": 1602664348
 }
