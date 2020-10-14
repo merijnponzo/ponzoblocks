@@ -277,25 +277,6 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
-                },
-                {
-                    "key": "field_5f86b681a9a3c",
-                    "label": "anchor id",
-                    "name": "anchor_id",
-                    "type": "text",
-                    "instructions": "create an (unique within the same page) anchor ID to refer from an anchor link in another block",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 }
             ]
         }
@@ -317,5 +298,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "buttons",
-    "modified": 1602664348
+    "modified": 1602666873
 }

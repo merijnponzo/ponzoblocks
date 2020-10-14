@@ -26,7 +26,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -45,7 +45,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -64,7 +64,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -94,7 +94,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -109,22 +109,34 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
                         "none": "none",
-                        "p_hexaprev": "p_hexaprev",
-                        "p_burger": "p_burger",
-                        "p_circlenext": "p_circlenext",
-                        "p_circleprev": "p_circleprev",
-                        "p_close": "p_close",
-                        "p_fb": "p_fb",
-                        "p_heart": "p_heart",
-                        "p_hexa": "p_hexa",
-                        "p_hexanext": "p_hexanext",
-                        "p_hexaplugs": "p_hexaplugs"
+                        "b_youtube": "b_youtube",
+                        "b_variety": "b_variety",
+                        "b_hart": "b_hart",
+                        "b_apple": "b_apple",
+                        "b_coldpressed": "b_coldpressed",
+                        "b_digestive": "b_digestive",
+                        "b_easydigestible": "b_easydigestible",
+                        "b_egg": "b_egg",
+                        "b_facebook": "b_facebook",
+                        "b_growth": "b_growth",
+                        "b_healthyskin": "b_healthyskin",
+                        "b_instagram": "b_instagram",
+                        "b_intestinal": "b_intestinal",
+                        "b_left": "b_left",
+                        "b_logo": "b_logo",
+                        "b_logofull": "b_logofull",
+                        "b_protection": "b_protection",
+                        "b_right": "b_right",
+                        "b_spirulina": "b_spirulina",
+                        "b_tasty": "b_tasty",
+                        "b_tomato": "b_tomato",
+                        "b_twitter": "b_twitter"
                     },
                     "default_value": "",
                     "allow_null": 0,
@@ -143,7 +155,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -157,6 +169,25 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5f86c191dc2a0",
+                    "label": "anchor id",
+                    "name": "anchor_id",
+                    "type": "text",
+                    "instructions": "create an (unique within the same page) anchor ID for this block.\r\nYou can refer from other blocks by typing in the same value as this ID in the field anchor link, within tab 'links'",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -178,5 +209,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1601540960
+    "modified": 1602667180
 }
