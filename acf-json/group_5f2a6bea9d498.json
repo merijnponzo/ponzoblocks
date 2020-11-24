@@ -134,7 +134,8 @@
                         "4": "33%",
                         "6": "50%",
                         "8": "75%",
-                        "10": "80%"
+                        "10": "80%",
+                        "12": "100%"
                     },
                     "default_value": 6,
                     "allow_null": 0,
@@ -1278,5 +1279,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1601540932
+    "modified": 1606230631
 }

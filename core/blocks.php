@@ -59,6 +59,24 @@ class Blocks{
                 'script' => false,
                 'group' => 'group_5f51f418218f6'
             ),
+            array(
+                'name' => 'gallery',
+                'slug' => 'gallery',
+                'title' => 'Gallery block',
+                'description' => 'Create gallery',
+                'icon' => 'columns',
+                'script' => false,
+                'group' => 'group_5c89120c750b8'
+            ),
+            array(
+                'name' => 'testimonials',
+                'slug' => 'testimonials',
+                'title' => 'Testimonials',
+                'description' => 'Create testimonials',
+                'icon' => 'columns',
+                'script' => false,
+                'gourp'=> 'group_5e2ad86b64c9f'
+            ),
             /*
              array(
                 'name' => 'quote',
@@ -83,14 +101,6 @@ class Blocks{
                 'description' => 'Create priceblocks',
                 'icon' => 'columns',
                 'script' => false,
-            ),
-            array(
-                'name' => 'testimonials',
-                'slug' => 'testimonials',
-                'title' => 'Testimonials',
-                'description' => 'Create testimonials',
-                'icon' => 'columns',
-                'script' => true,
             ),
             array(
                 'name' => 'shortcode',

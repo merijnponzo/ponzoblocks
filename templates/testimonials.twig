@@ -1,0 +1,7 @@
+{# testimonials #}
+{% extends "@ponzoblocks/blockwrap.twig" %}
+{% block blockcontent %}
+    {% for card in block.testimonials %}
+            {% include '@ponzoblocks/elements/card.twig'  %}
+    {% endfor %}
+{% endblock %}
