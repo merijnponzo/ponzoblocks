@@ -1,6 +1,6 @@
 {
   "name": "merijnponzo/ponzoblocks",
-  "type": "gutenberg-acf-plugin",
+  "type": "wordpress-plugin",
   "description": "gutenberg-acf-plugin",
   "license": "GPL-2.0+"
 }
