@@ -75,82 +75,8 @@ class Blocks{
                 'description' => 'Create testimonials',
                 'icon' => 'columns',
                 'script' => false,
-                'gourp'=> 'group_5e2ad86b64c9f'
+                'group'=> 'group_5e2ad86b64c9f'
             ),
-            /*
-             array(
-                'name' => 'quote',
-                'slug' => 'quote',
-                'title' => 'Quote',
-                'description' => 'Create Quote block',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'tiles',
-                'slug' => 'tiles',
-                'title' => 'Tiles',
-                'description' => 'Create tiles',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'priceblocks',
-                'slug' => 'priceblocks',
-                'title' => 'Priceblocks',
-                'description' => 'Create priceblocks',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'shortcode',
-                'slug' => 'shortcode',
-                'title' => 'Shortcode',
-                'description' => 'Create a shortcode',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'custom',
-                'slug' => 'custom',
-                'title' => 'Custom',
-                'description' => 'Create a custom part',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'listitems',
-                'slug' => 'listitems',
-                'title' => 'Listitems',
-                'description' => 'Create a listitem',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'specialfeatures',
-                'slug' => 'specialfeatures',
-                'title' => 'Special features',
-                'description' => 'Create specialfeatures',
-                'icon' => 'columns',
-                'script' => true,
-            ),
-            array(
-                'name' => 'gallery',
-                'slug' => 'gallery',
-                'title' => 'Gallery',
-                'description' => 'Create a gallery',
-                'icon' => 'columns',
-                'script' => false,
-            ),
-            array(
-                'name' => 'visualgallery',
-                'slug' => 'visualgallery',
-                'title' => 'Visual with Gallery',
-                'description' => 'Create a visual + gallery',
-                'icon' => 'columns',
-                'script' => false,
-            )
-            */
         );
     }
 }

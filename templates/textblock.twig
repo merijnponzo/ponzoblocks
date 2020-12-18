@@ -11,11 +11,13 @@
         {{ button.button(block.link.link, blocktheme )}}
         </div>
     </div>
-   <div class="c{{blocktheme.columnwidth}} pb__text {{block.textposition}}">
+    {% if block.textblocks == 2 %}
+    <div class="c{{blocktheme.columnwidthsecond}} pb__text {{block.textposition}}">
         <div class="box">
         {{ textfields.second(block, blocktheme) }}
         {# show cta below text if isnt nested within visual #}
-        {{ button.button(block.link.link, blocktheme )}}
+        {{ button.button(block.link_second.link, blocktheme )}}
         </div>
     </div>
+    {% endif %}
 {% endblock %}

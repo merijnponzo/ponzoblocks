@@ -3,7 +3,7 @@
 {% import '@ponzoblocks/elements/button.twig' as button %}
 {% import '@ponzoblocks/elements/textfields.twig' as textfields %}
 <div class="c{{blocktheme.columnwidth}} pb-contentcolumn">
-    {% if column.visual %}
+    {% if column.visual.image %}
     <div class="pb__visual">
          {{ visual.image(
            column.visual, 

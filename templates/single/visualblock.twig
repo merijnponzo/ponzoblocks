@@ -1,0 +1,17 @@
+{# single/visual #}
+{% import '@ponzoblocks/elements/visual.twig' as visual %}
+{% import '@ponzoblocks/elements/button.twig' as button %}
+
+{% if nestmode == false %}
+{% extends "@ponzoblocks/blockwrap.twig" %}
+{% block blockcontent %}
+{}
+<div class="c{{ 12 - blocktheme.columnwidth}} pb__visual">
+{{ visual.image(
+    block.visual.visual, 
+    block.visualoptions.visualoptions)
+}}
+{{ blocktheme.linkvisual ? button.button(block.link.link, blocktheme ) }}
+</div>
+
+{% endblock %}

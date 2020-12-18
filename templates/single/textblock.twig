@@ -1,0 +1,10 @@
+{# textblock #}
+{% import '@ponzoblocks/elements/button.twig' as button %}
+{% import '@ponzoblocks/elements/textfields.twig' as textfields %}
+<div class="c{{blocktheme.columnwidth}} pb__text {{block.textposition}}">
+    <div class="box">
+    {{ textfields.all(block, blocktheme) }}
+    {# show cta below text if isnt nested within visual #}
+    {{ button.button(block.link.link, blocktheme )}}
+    </div>
+</div>

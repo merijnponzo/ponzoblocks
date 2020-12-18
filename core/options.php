@@ -131,6 +131,59 @@ function pb_selectedcategories()
         });
     }
 }
+
+/*
+*
+*  Get block by field group
+*/
+function pb_getblock($group){
+    $args = array(
+        'post_type' => 'acf-field-group',
+        'name' => $group,
+        'posts_per_page' => 1
+    );
+    return get_posts( $args );
+}
+/*
+*
+*  Hide fields based on the current blocktheme 
+*/
+function pb_hidefield($field) {
+    $hide_fields = [];
+    $fieldhide  = false;
+    // get parent block and the blocktheme
+    if(array_key_exists('parent',$field)){
+        $block = pb_getblock($field['parent']);
+        if(!empty($block)){
+            if(isset($theme['hidefields'])){
+                $theme = pb_blocktheme($block[0]->post_excerpt, true);
+                $hide_fields = $theme['hidefields'];
+            }
+        }
+    }
+    // hide fields
+    if(!empty($hide_fields)){
+        foreach($hide_fields as $hide){
+           if($field['name'] === $hide['hidefield']){
+                $fieldhide = true;
+           }
+        }
+    }
+    // error_log(print_r([$field['name'],$fieldhide], true));
+    if ($fieldhide) {
+        $field['wrapper']['class'] = 'hidden';
+	}
+	return $field;
+}
+
+function pb_checkhidefields(){
+    // get_field('option')
+    $fields = ['title', 'subtitle', 'text','title_second','subtitle_second','text_second','link_second'];
+    foreach($fields as $field){
+        add_filter('acf/load_field/name='.$field, 'pb_hidefield');
+    }
+}
+
 /*
 *
 *  Adds the ACF ponzoblocks options to the admin
@@ -149,5 +202,6 @@ if(is_admin()){
     add_action('acf/init','pb_addthemeicons');
     add_action('acf/init','pb_addfilterlinks');
     add_action('acf/init','pb_selectedcategories');
+    pb_checkhidefields();
 }
 

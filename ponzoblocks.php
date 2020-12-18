@@ -18,6 +18,7 @@ require "core/register.php";
 require "core/localjson.php";
 require "helpers/theme.php";
 require "helpers/reset.php";
+require "core/cpt/testimonials.php";
 
 class Ponzoblocks
 {

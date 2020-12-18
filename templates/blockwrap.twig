@@ -10,8 +10,8 @@
         </div>
         {% endif %}
         {# slideshow #}
-        <div class="{{ blocktheme.slideshow  ? 'slider' : 'row' }}"
-        {% if blocktheme.slideshow %}
+        <div class="block-content {{ blocktheme.ui }}"
+        {% if blocktheme.ui == 'slider' %}
         data-desktop="{{blocktheme.slidesdesktop}}" 
         data-mobile="{{blocktheme.slidesmobile}}"
         {% endif %}

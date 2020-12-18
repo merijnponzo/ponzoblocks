@@ -6,7 +6,12 @@ use Ponzoblocks\core\Blocks as Blocks;
 *  by populating theme block options, (from options->ponzoblocks admin)
 *  into dropdown select within block (acf field 'textvisualtheme')
 */
-function pb_blocktheme($blockname){
+function pb_blocktheme($blockname, $formatname = false){
+    // format name if the blockname has pb-
+    if($formatname){
+        $blockname = str_replace('pb-', '', $blockname);
+    }
+    
     //get block options
     $options = get_field($blockname.'_themes', 'options');
     $option = array();
@@ -36,8 +41,12 @@ function pb_allowedblocks(){
     // allowed core blocks
     $allowed_blocks = array( 
         'core/block',
-        //'core/columns',
-        'core/template'
+        'core/template',
+        /*
+        'core/columns',
+        'core/image',
+        'core/text'
+        */
     );
     //add them to allowed blocks
     foreach((array) Blocks::getBlocks() as $block){
@@ -46,7 +55,6 @@ function pb_allowedblocks(){
     }
     return $allowed_blocks;
 }
-
 /*
 *
 * Register the blocks as ponzoblocks
@@ -67,6 +75,12 @@ function pb_registerblocks()
                 'category' => 'ponzoblocks',
                 'icon' => $block['icon'],
                 'keywords' => array($block),
+                /*
+                'supports' => array(
+                    'jsx' => true,
+                    'mode' => false,
+                ),
+                */
             );
             // get the registered status from block options
             $registered = get_field('blocks_'.$block['name'],'options');
@@ -76,15 +90,17 @@ function pb_registerblocks()
         }
     }
 }
+
+
 /*
 *
 * Render with timber
 */
 function pb_blockrender( $block) {
-
+   
     $context = Timber::context();
     $blockname = $block['slug'];
-    $blocktheme = pb_blocktheme($blockname);
+    $blocktheme = pb_blocktheme($blockname, false);
     // Add blockname
     $context['blockname'] = $blockname;
     // Acf fields

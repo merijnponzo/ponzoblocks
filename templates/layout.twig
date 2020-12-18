@@ -1,0 +1,6 @@
+{% extends "@ponzoblocks/blockwrap.twig" %}
+{% block blockcontent %}
+<InnerBlocks
+allowedBlocks="{{ ['core/columns'] | json_encode() | escape('html_attr') }}"
+/>
+{% endblock %}

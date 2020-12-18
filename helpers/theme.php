@@ -114,6 +114,12 @@ function pb_post_term_children($taxonomy_name, $term_parent){
     return $terms_result;
 }
 
+function pb_postobject($post){
+    $post->meta = get_fields($post);
+    $post->thumbnail = get_the_post_thumbnail_url($post,'thumbnail');
+    return $post;
+}
+
 // get another block, and render it
 function pb_get_otherblock( $post_id ) {
     $reuse_block = get_post( $post_id );

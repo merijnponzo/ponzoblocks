@@ -31,9 +31,9 @@
 {% macro thumbnail(post, options) %}
 <div class="visual ratio--{{options.ratio}}">
     <div class="img--wrap mwid--{{options.size}}">
-    <img class="img lazyload" src="{{ post.thumbnail.src('thumbnail') }}" data-srcset="{{ post.thumbnail.src('thumbnail') }} 1x,
-        {{ post.thumbnail.src('medium') }} 2x,
-        {{ post.thumbnail.src('large') }} 4x">
+    <img class="img lazyload" src="{{ post.thumbnail.src('thumbnail') }}" data-srcset="{{ thumbnail.src('thumbnail') }},
+        {{ post.thumbnail.src('medium') }},
+        {{ post.thumbnail.src('large') }}">
     </div>
 </div>
  {% endmacro %}
@@ -70,7 +70,7 @@
 </div>
 {% endmacro %}
 {# visual #}
-{% macro imagecustom(visual, ratio = '4x3', size = 'full', position = 'center' , fit = 'contain', contain_desktop = 0 ) %}
+{% macro custom(visual, ratio = '4x3', size = 'full', position = 'center' , fit = 'contain', contain_desktop = 0 ) %}
 {# acf cloned visual element #}
 <div class="visual {{visual.width < visual.height ? 'portrait' : 'landscape'}} mwid--{{size}}">
     <div class="img--wrap ratio--{{ratio}}">
@@ -88,6 +88,17 @@
             class="img lazyload {{fit}} {{position}} {{contain_desktop ? 'contain--l' : ''}}"
             data-sizes="auto"/>
         </picture>
+    </div>
+ </div>
+{% endmacro %}
+
+{% macro url(url, ratio = '4x3', size = 'full', position = 'center' , fit = 'contain', contain_desktop = 0 ) %}
+<div class="visual mwid--{{size}}">
+    <div class="img--wrap ratio--{{ratio}}">
+           <img
+            data-src="{{url}}"
+            class="img lazyload {{fit}} {{position}} {{contain_desktop ? 'contain--l' : ''}}"
+            data-sizes="auto"/>
     </div>
  </div>
 {% endmacro %}

@@ -133,7 +133,39 @@
                         "3": "25%",
                         "4": "33%",
                         "6": "50%",
-                        "8": "75%",
+                        "8": "66%",
+                        "9": "75%",
+                        "10": "80%",
+                        "12": "100%"
+                    },
+                    "default_value": 6,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5fc4fcea5f1b6",
+                    "label": "columnwidthsecond",
+                    "name": "columnwidthsecond",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "2": "20%",
+                        "3": "25%",
+                        "4": "33%",
+                        "6": "50%",
+                        "8": "66%",
+                        "9": "75%",
                         "10": "80%",
                         "12": "100%"
                     },
@@ -993,7 +1025,7 @@
                 },
                 {
                     "key": "field_5f314bf32faaf",
-                    "label": "slideshow",
+                    "label": "ui",
                     "name": "",
                     "type": "tab",
                     "instructions": "",
@@ -1008,11 +1040,11 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_5f314bfc2fab0",
-                    "label": "slideshow",
-                    "name": "slideshow",
-                    "type": "true_false",
-                    "instructions": "if possible, create slide of cards, columns, banner images",
+                    "key": "field_5fc7603e42def",
+                    "label": "ui",
+                    "name": "ui",
+                    "type": "select",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -1020,11 +1052,18 @@
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 0,
+                    "choices": {
+                        "row": "default",
+                        "slider": "slideshow",
+                        "accordeon row": "accordeon"
+                    },
+                    "default_value": "row",
+                    "allow_null": 0,
+                    "multiple": 0,
                     "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
                 },
                 {
                     "key": "field_5f314f4d5c884",
@@ -1036,9 +1075,9 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_5f314bfc2fab0",
+                                "field": "field_5fc7603e42def",
                                 "operator": "==",
-                                "value": "1"
+                                "value": "slideshow"
                             }
                         ]
                     ],
@@ -1073,9 +1112,9 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_5f314bfc2fab0",
+                                "field": "field_5fc7603e42def",
                                 "operator": "==",
-                                "value": "1"
+                                "value": "slideshow"
                             }
                         ]
                     ],
@@ -1258,6 +1297,74 @@
                     "ui": 0,
                     "ui_on_text": "",
                     "ui_off_text": ""
+                },
+                {
+                    "key": "field_5fc50678367f5",
+                    "label": "hidefields",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
+                    "key": "field_5fc61f47842af",
+                    "label": "hidefields",
+                    "name": "hidefields",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_5fc61f59842b0",
+                            "label": "hidefield",
+                            "name": "hidefield",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "title": "title",
+                                "subtitle": "subtitle",
+                                "text": "text",
+                                "title_second": "title_second",
+                                "subtitle_second": "subtitle_second",
+                                "text_second": "text_second",
+                                "link_second": "link_second",
+                                "visual": "visual"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ]
                 }
             ]
         }
@@ -1279,5 +1386,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1606230631
+    "modified": 1606902388
 }

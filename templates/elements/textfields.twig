@@ -1,6 +1,7 @@
 {# all textfields #}
 {% macro all(block, blocktheme) %}
    {# title #}
+   <div class="pb__head">
    {% if block.title %}
    <{{blocktheme.title_heading}} class="{{blocktheme.title_style}} {{blocktheme.title_size}}">
       {{block.title}}
@@ -12,9 +13,10 @@
       {{block.subtitle}}
    </{{blocktheme.subtitle_heading}}>
    {% endif %}
+   </div>
    {# text #}
    {% if block.text %}
-   <{{blocktheme.text_heading}} class="{{blocktheme.text_style}} {{blocktheme.text_size}}">
+   <{{blocktheme.text_heading}} class="{{blocktheme.text_style}} {{blocktheme.text_size}} pb__content">
       {{block.text}}
    </{{blocktheme.text_heading}}>
    {% endif %}

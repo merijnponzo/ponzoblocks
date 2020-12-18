@@ -1,9 +1,9 @@
 {
-    "key": "group_5c89120c750b8",
-    "title": "pb gallery",
+    "key": "group_5fc6396511891",
+    "title": "pb layout",
     "fields": [
         {
-            "key": "field_5c891218bf3b6",
+            "key": "field_5fc639651bd2f",
             "label": "content",
             "name": "",
             "type": "tab",
@@ -19,71 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5c891229bf3b7",
-            "label": "gallery",
-            "name": "gallery",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5c891234bf3b8",
-                    "label": "text",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 2,
-                    "new_lines": "br"
-                },
-                {
-                    "key": "field_5fc4c48d2356c",
-                    "label": "image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5c891fa42aa95",
+            "key": "field_5fc639651bd41",
             "label": "heading",
             "name": "",
             "type": "tab",
@@ -99,7 +35,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5c891fb32aa96",
+            "key": "field_5fc639651bd47",
             "label": "heading",
             "name": "heading",
             "type": "clone",
@@ -120,7 +56,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_5c8912b246d7d",
+            "key": "field_5fc639651bd4c",
             "label": "design",
             "name": "",
             "type": "tab",
@@ -136,7 +72,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5c8912b946d7e",
+            "key": "field_5fc639651bd51",
             "label": "theme",
             "name": "gallerytheme",
             "type": "select",
@@ -158,7 +94,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5c891bae2b9fa",
+            "key": "field_5fc639651bd56",
             "label": "visual options",
             "name": "",
             "type": "tab",
@@ -174,7 +110,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5c891b8f2b9f9",
+            "key": "field_5fc639651bd5b",
             "label": "visual options",
             "name": "visualoptions",
             "type": "clone",
@@ -200,7 +136,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/gallery"
+                "value": "acf\/layout"
             }
         ]
     ],
@@ -212,5 +148,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606730912
+    "modified": 1606826529
 }

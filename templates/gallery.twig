@@ -1,7 +1,11 @@
 {# gallery #}
+{% import '@ponzoblocks/elements/visual.twig' as visual %}
 {% extends "@ponzoblocks/blockwrap.twig" %}
 {% block blockcontent %}
-        {% for card in block.gallery %}
-                {% include '@ponzoblocks/elements/card.twig'  %}
+
+        {% for gallery in block.gallery %}
+        <div class="c{{blocktheme.columnwidth}} pb-galleryitem">
+                {{ visual.image(gallery, blocktheme.visual ? blocktheme.visual : block.visualoptions.visualoptions  ) }}
+        </div>       
         {% endfor %}
 {% endblock %}
