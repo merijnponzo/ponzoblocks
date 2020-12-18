@@ -1,7 +1,6 @@
 {
-"autoload": {
-    "psr-4": {
-        "App": "app/"
-    }
-}
+  "name": "merijnponzo/ponzoblocks",
+  "type": "gutenberg-acf-plugin",
+  "description": "gutenberg-acf-plugin",
+  "license": "GPL-2.0+"
 }
